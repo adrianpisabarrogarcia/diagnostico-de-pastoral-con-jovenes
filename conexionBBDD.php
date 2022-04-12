@@ -3,26 +3,26 @@
 
 function parametrosConexion(){
     return [
-        "servername" => "localhost",
-        "database" => "databasename",
+        "host" => "192.168.64.2:3306",
+        "database" => "diagnosticopastoral",
         "username" => "username",
         "password" => "password"
     ];
 }
 
 function conectarBD(){
-    $datosConexion = parametrosConexion();
-    $conexion = mysqli_connect($datosConexion["servername"], $datosConexion["username"], $datosConexion["password"], $datosConexion["database"]);
-    if (!$conexion) {
-        die("Connection failed: " . mysqli_connect_error());
+    try {
+        $conexion = new PDO("mysql:host=".parametrosConexion()["host"].";dbname=".parametrosConexion()["database"], parametrosConexion()["username"], parametrosConexion()["password"]);
+        return $conexion;
+    }catch(PDOException $e){
+        echo "Error: " . $e->getMessage();
     }
-
-    return $conexion;
+    return null;
 }
 
 
 function desconectarBD($conexion){
-    mysqli_close($conexion);
+    $conexion = null;
 }
 
 

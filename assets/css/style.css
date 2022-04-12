@@ -4,17 +4,19 @@
     font-family: bigjohn;
     src: url(../fonts/bigjohn.otf);
 }
+
 @font-face {
     font-family: caviardreams;
     src: url(../fonts/caviardreams.ttf);
 }
+
 h1, h2 {
-    /*font-family: caviardreams;*/
+    /*font-family: bigjohn;*/
     font-family: 'Raleway', sans-serif;
 }
 
 h3, h4, h5, h6 {
-    font-family: bigjohn;
+    font-family: caviardreams;
 }
 
 .minh-100 {
@@ -27,31 +29,45 @@ h3, h4, h5, h6 {
     --third-color: #5e5e5e;
 }
 
-body{
-    background-image: url(../img/background.jpg); 
+body {
+    background-image: url(../img/background.jpg);
     background-size: cover;
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
 }
 
-h1{
+ol {
+    counter-reset: item;
+}
+
+
+ol li::marker {
+    font-weight: bold;
+}
+
+h1 {
     color: var(--second-color);
 }
 
-h2{
+h2 {
     color: var(--third-color);
 }
 
-#scuare{
+h3 {
+    color: var(--second-color);
+}
+
+#scuare {
     background-color: white;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: var(--second-color);
     border: 3px solid var(--third-color);
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
     background-color: var(--third-color);
     border: 3px solid var(--second-color);
 }
@@ -62,19 +78,29 @@ h2{
 ::-webkit-input-placeholder {
     text-align: center;
 }
- 
+
 :-moz-placeholder { /* Firefox 18- */
-    text-align: center;  
+    text-align: center;
 }
- 
-::-moz-placeholder {  /* Firefox 19+ */
-    text-align: center;  
+
+::-moz-placeholder { /* Firefox 19+ */
+    text-align: center;
 }
- 
-:-ms-input-placeholder {  
-    text-align: center; 
+
+:-ms-input-placeholder {
+    text-align: center;
 }
 
 input {
     text-align: center;
+}
+
+.respuesta{
+    color: var(--third-color);
+}
+
+
+
+.progress-bar {
+    background-color: var(--second-color);
 }
