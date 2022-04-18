@@ -3,7 +3,7 @@
 
 //Generar en sesión un token
 //Cerrar la sesion si esta abierta
-if(isset($_SESSION['token'])){
+if(!isset($_SESSION['token'])){
     $_SESSION["token"] = generarTokenUnico();
 }
 
@@ -63,7 +63,6 @@ function comprobarTokenUnico($token)
 }
 
 ?>
-
     <div class="row justify-content-center align-items-center minh-100">
         <div class="p-3 p-md-5 m-5 col-10 col-md-5 rounded " id="scuare">
             <div class="mb-5">
@@ -95,3 +94,4 @@ function comprobarTokenUnico($token)
     </div>
 
 <?php require_once './nav/footer.php'; ?>
+

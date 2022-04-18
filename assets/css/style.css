@@ -37,14 +37,6 @@ body {
     background-position: center;
 }
 
-ol {
-    counter-reset: item;
-}
-
-
-ol li::marker {
-    font-weight: bold;
-}
 
 h1 {
     color: var(--second-color);
@@ -103,4 +95,9 @@ input {
 
 .progress-bar {
     background-color: var(--second-color);
+}
+
+.form-check-input:checked{
+    background-color: var(--second-color);
+    border-color: var(--second-color);
 }
