@@ -7,4 +7,4 @@ Es básicamente una serie de formularios realizados en PHP, donde los datos son 
 - [] Ocultar los .php
 - [] Página de resultados
 - [] Explicación del README.md
-- [] Exportación de la base de datos
+- [✅] Exportación de la base de datos
