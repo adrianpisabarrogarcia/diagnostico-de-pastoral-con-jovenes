@@ -91,6 +91,15 @@ input {
     color: var(--third-color);
 }
 
+.primary-color {
+    color: var(--second-color);
+}
+
+.primary-bg-color {
+    background-color: var(--third-color);
+    color: white;
+}
+
 
 
 .progress-bar {
