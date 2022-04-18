@@ -98,7 +98,7 @@
 
             <!-- botón de siguiente -->
             <div class="m-5 text-center">
-                <input type="submit" name="submit" class="btn btn-primary text-center w-100" value="Siguiente 2/5 ➡️">
+                <input type="submit" name="submit" class="btn btn-primary text-center w-100" value="Siguiente 3/5 ➡️">
             </div>
 
 
