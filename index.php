@@ -4,11 +4,6 @@
 //Generar en sesión un token
 //Cerrar la sesion si esta abierta
 if(isset($_SESSION['token'])){
-    session_unset();
-    session_destroy();
-}
-session_start();
-if(!isset($_SESSION["token"])){
     $_SESSION["token"] = generarTokenUnico();
 }
 
