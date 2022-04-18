@@ -25,13 +25,16 @@
             ", `1.5` = " . $data["1.5"] .
             ", `1.6` = " . $data["1.6"] .
             " WHERE ID = '" . $token . "'";
-        echo $query;
         //Save the results of the form in the database
         $conn = conectarBD();
         $esUnico = true;
         $stmt = $conn->prepare($query);
         $stmt->execute();
         desconectarBD($conn);
+
+
+        //Redirect to the next page
+        header("Location: ".BASEURL."/form/two.php");
     }
 
 ?>
@@ -99,7 +102,7 @@
                 <span>Progreso del cuestionario:</span>
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="25"
-                         aria-valuemin="0" aria-valuemax="100">25%
+                         aria-valuemin="0" aria-valuemax="100">20%
                     </div>
                 </div>
             </div>
