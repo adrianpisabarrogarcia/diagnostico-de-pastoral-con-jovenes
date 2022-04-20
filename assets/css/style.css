@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
-
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');*/
 @font-face {
     font-family: bigjohn;
     src: url(../fonts/bigjohn.otf);
@@ -10,6 +10,11 @@
     src: url(../fonts/caviardreams.ttf);
 }
 
+/*
+*{
+    font-family: 'Poppins', sans-serif ;
+}
+*/
 h1, h2 {
     /*font-family: bigjohn;*/
     font-family: 'Raleway', sans-serif;

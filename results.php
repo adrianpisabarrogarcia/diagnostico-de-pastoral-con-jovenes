@@ -729,7 +729,7 @@ if (count($rows) > 0) {
         <hr>
         <div class="d-md-flex justify-content-center w-100">
             <div class="m-5 text-center">
-                <a href="https://rpj.es" class="btn btn-primary text-center w-100">🏠 Ir a rpj.es</a>
+                <a href="https://rpj.es" target="_blank" class="btn btn-primary text-center w-100">🏠 Ir a rpj.es</a>
             </div>
             <div class="m-5 text-center">
                 <a href="<?= BASEURL ?>" class="btn btn-primary text-center w-100">📝 Volver a realizar el formulario</a>
