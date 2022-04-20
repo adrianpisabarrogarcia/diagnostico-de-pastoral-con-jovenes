@@ -73,6 +73,8 @@ if (count($rows) > 0) {
     header("Location: " . BASEURL);
 }
 
+echo var_dump($data)
+
 ?>
 
 <div class="row justify-content-center align-items-center">
