@@ -152,7 +152,6 @@ if (count($rows) > 0) {
                         ]
                     },
                     options: {
-                        aspectRatio: 1,
                         scale: {
                             min: 0,
                             max: 10,
@@ -192,7 +191,6 @@ if (count($rows) > 0) {
                             ]
                         },
                         options: {
-                            aspectRatio: 1,
                             indexAxis: 'y',
                             legend: {
                                 position: 'right',
@@ -211,19 +209,21 @@ if (count($rows) > 0) {
                 <div class="m-2 p-2 rounded primary-bg-color">
                     <h3 class="text-center text-white">ELEMENTOS COMPLEMENTARIOS POR ÁREA<h3>
                 </div>
-                <canvas id="elementos-esenciales-por-area"></canvas>
+                <canvas id="elementos-complementarios-por-area"></canvas>
                 <script>
-                    const ctxElementosEsencialesPorArea = document.getElementById('elementos-esenciales-por-area').getContext('2d');
-                    const chartElementosEsencialesPorArea = new Chart(ctxElementosEsencialesPorArea, {
+                    const ctxElementosComplementariosPorArea = document.getElementById('elementos-complementarios-por-area').getContext('2d');
+                    const chartElementosComplementariosPorArea = new Chart(ctxElementosComplementariosPorArea, {
                         type: 'bar',
                         data: {
-                            labels: ['Responsable', 'Equipo Pastoral con Jóvenes'],
+                            labels: ['Comunicación', 'Recursos', 'Estabilidad', 'Formación'],
                             datasets: [
                                 {
                                     label: 'Resultados',
                                     data: [
-                                        <?=$data["1.4"]?>,
-                                        <?=$data["1.1"]?>
+                                        <?=$data["1.6"]?>,
+                                        <?=$data["1.5"]?>,
+                                        <?=$data["1.3"]?>,
+                                        <?=$data["1.2"]?>,
                                     ],
                                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                                     borderColor: 'rgba(255, 99, 132, 1)',
@@ -232,15 +232,14 @@ if (count($rows) > 0) {
                             ]
                         },
                         options: {
-                            aspectRatio: 1,
                             indexAxis: 'y',
                             legend: {
                                 position: 'right',
                             },
-                            scale: {
+                            scales: {
+                                stepSize: 0.2,
+                                max: 1,
                                 min: 0,
-                                max: 3,
-                                stepSize: 0.5
                             },
                         }
                     });
