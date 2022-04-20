@@ -33,7 +33,7 @@
 
 
         //Redirect to the next page
-        header("Location: ".BASEURL."/results.php&id=" . $token);
+        header("Location: ".BASEURL."/results.php?id=" . $token);
     }
 
 ?>
@@ -100,7 +100,7 @@
             <div class="me-5 ms-5">
                 <span>Progreso del cuestionario:</span>
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="25"
+                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100"
                          aria-valuemin="0" aria-valuemax="100">100%
                     </div>
                 </div>

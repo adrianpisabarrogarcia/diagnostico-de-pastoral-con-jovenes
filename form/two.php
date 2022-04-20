@@ -98,7 +98,7 @@
 
             <!-- botón de siguiente -->
             <div class="m-5 text-center">
-                <input type="submit" name="submit" class="btn btn-primary text-center w-100" value="Siguiente 3/5 ➡️">
+                <input type="submit" name="submit" class="btn btn-primary text-center w-100" value="Siguiente 2/5 ➡️">
             </div>
 
 
@@ -107,7 +107,7 @@
             <div class="me-5 ms-5">
                 <span>Progreso del cuestionario:</span>
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="25"
+                    <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40"
                          aria-valuemin="0" aria-valuemax="100">40%
                     </div>
                 </div>

@@ -122,10 +122,10 @@ if (count($rows) > 0) {
 
         <!-- first form -->
         <div class="m-2 p-2 rounded primary-bg-color">
-            <h3 class="text-center text-white">EQUIPO DE TRABAJO<h3>
+            <h3 class="text-center text-white">PERFIL GENERAL PROCESOS DE PASTORAL CON JÓVENES<h3>
         </div>
         <div class="m-5">
-            <canvas id="equipo-trabajo" width="400" height="100"></canvas>
+            <canvas id="equipo-trabajo"></canvas>
             <script>
                 const ctxEquipoTrabajo = document.getElementById('equipo-trabajo').getContext('2d');
                 const chartEquipoTrabajo = new Chart(ctxEquipoTrabajo, {
@@ -143,7 +143,7 @@ if (count($rows) > 0) {
                         ]
                     },
                     options: {
-                        resposive: true
+                        aspectRatio: 2
                     }
                 });
             </script>
