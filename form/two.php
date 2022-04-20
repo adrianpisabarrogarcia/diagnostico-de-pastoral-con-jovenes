@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="form-check m-2">
                                     <input class="form-check-input" type="radio" name="2.<?= $i ?>" id="<?= $i ?>.1"
-                                           value="<?= $questions2[$i]['answers']['si'] ?>" checked>
+                                           value="<?= $questions2[$i]['answers']['si'] ?>">
                                     <label class="form-check-label respuesta" for="<?= $i ?>.1">
                                         Sí/Siempre
                                     </label>
