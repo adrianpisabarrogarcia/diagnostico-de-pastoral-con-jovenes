@@ -14,7 +14,7 @@ Es básicamente una serie de formularios realizados en PHP, donde los datos son 
 2. Ir al archivo `./nav/header.php` y cambiar la línea 8 por:  
 - Si la url es https://diagnostico.rpj.es/, poner:
 ```php
-define("BASEURL", "/");
+define("BASEURL", "");
 ```
 - Si la url es https://rpj.es/diagnostico/, poner:
 ```php
