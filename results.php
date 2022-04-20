@@ -6,7 +6,8 @@ session_destroy();
 
 if (!isset($_GET['id'])) {
     if (empty($_GET['id'])) {
-        header("Location: " . BASEURL);
+        echo "<script> location.replace('" . BASEURL . "/'); </script>";
+        exit();
     }
 }
 
@@ -69,7 +70,8 @@ if (count($rows) > 0) {
         ];
     }
 } else {
-    header("Location: " . BASEURL);
+    echo "<script> location.replace('" . BASEURL . "/'); </script>";
+    exit();
 }
 
 ?>

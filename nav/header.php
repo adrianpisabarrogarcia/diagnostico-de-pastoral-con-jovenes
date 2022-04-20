@@ -1,4 +1,13 @@
 <?php
+// Session
+session_start();
+
+//modo debug
+//ini_set('display_errors', 1);
+//error_reporting(E_ALL|E_STRICT);
+//header("Cache-Control: no-cache");
+//mb_internal_encoding("UTF-8");
+
 
 // Constants
 $basedirAux = str_replace('/nav', '', __DIR__);
@@ -10,8 +19,7 @@ define("BASEURL", "/DiagnosticoPastoralConJovenesForm");
 // Includes
 require_once BASEDIR . "/conexionBBDD.php";
 
-// Session
-session_start();
+
 
 
 ?>

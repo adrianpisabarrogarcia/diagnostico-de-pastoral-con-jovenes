@@ -1,14 +1,9 @@
 <?php require_once "./nav/header.php"; ?>
 <?php
 
-session_destroy();
-session_start();
 
-//Generar en sesión un token
-//Cerrar la sesion si esta abierta
-if(!isset($_SESSION['token'])){
-    $_SESSION["token"] = generarTokenUnico();
-}
+//Generar en sesión un token nuevo en el index.php
+$_SESSION["token"] = generarTokenUnico();
 
 function generarTokenUnico(){
     return sha1(mt_rand(1, 90000) . 'SALT');
@@ -30,7 +25,8 @@ if (isset($_POST["submit"])) {
     insertDatosUusarioNoNull($nombre, $email, $movimiento);
 
     //Redireccion
-    header("Location: " . BASEURL . "/form/one");
+    echo "<script> location.replace('" . BASEURL . "/form/one'); </script>";
+    exit();
 }
 
 

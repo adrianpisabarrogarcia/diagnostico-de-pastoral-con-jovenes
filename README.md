@@ -1,17 +1,14 @@
 # Herramienta de diagnóstico para la Pastoral Juvenil
-## ¿De qué trata este repo y qué tecnolodías utiliza?
-Es básicamente una serie de formularios realizados en PHP, donde los datos son guardados en una base de datos relacional de tipo MySQL y después de rellenar el formulario, obtenemos unos gráficos realizados en JS. Para el proyecto también se utilizar Bootstrap.
-## TodoList
-- [✅] Formularios
-- [✅] Meta para posición de Google
-- [] Ocultar los .php
-- [✅] Página de resultados
-- [✅] Explicación del README.md
-- [✅] Exportación de la base de datos
 
-## Proceso para poner en producción
+
+## ¿De qué trata este repo y qué tecnolodías utiliza?
+Son una serie de formularios realizados en PHP, donde los datos son guardados en una base de datos relacional de tipo MySQL y después de rellenar el formulario, obtenemos unos gráficos realizados en ChartJs. Para el proyecto también se utiliza Bootstrap.
+
+
+## Proceso para poner en producción 
+
 1. Poner este repositio en la carpeta correspondiente del servidor. Recomendable usar un subdominio como https://diagnostico.rpj.es.
-2. Ir al archivo `./nav/header.php` y cambiar la línea 8 por:  
+2. Ir al archivo `./nav/header.php` y cambiar la línea 17 por:  
 - Si la url es https://diagnostico.rpj.es/, poner:
 ```php
 define("BASEURL", "");
@@ -40,3 +37,5 @@ function parametrosConexion(){
 - `.gitignore`
 - `.git` (si la hay)
 
+## URL de prueba   
+- La url de prueba es [https://diagnostico.adrianpisabarro.com/](https://diagnostico.adrianpisabarro.com/)

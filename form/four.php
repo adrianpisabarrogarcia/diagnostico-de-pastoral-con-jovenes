@@ -3,7 +3,8 @@
 <?php
 
     if(!isset($_SESSION['token'])){
-        header("Location: ".BASEURL);
+        echo "<script> location.replace('" . BASEURL . "/'); </script>";
+        exit();
     }
 
     if (isset($_POST['submit'])) {
@@ -39,7 +40,8 @@
 
 
         //Redirect to the next page
-        header("Location: ".BASEURL."/form/five");
+        echo "<script> location.replace('" . BASEURL . "/form/five'); </script>";
+        exit();
     }
 
 ?>
