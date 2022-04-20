@@ -23,57 +23,54 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $data = [];
 if (count($rows) > 0) {
     foreach ($rows as $row) {
-
         $data = [
             "token" => $row['ID'],
             "nombre" => $row['NOMBRE'],
             "email" => $row['EMAIL'],
             "movimiento" => $row['MOVIMIENTO'],
-            "1.1" => $row['1.1'],
-            "1.2" => $row['1.2'],
-            "1.3" => $row['1.3'],
-            "1.4" => $row['1.4'],
-            "1.5" => $row['1.5'],
-            "1.6" => $row['1.6'],
-            "2.1" => $row['2.1'],
-            "2.2" => $row['2.2'],
-            "2.3" => $row['2.3'],
-            "2.4" => $row['2.4'],
-            "2.5" => $row['2.5'],
-            "2.6" => $row['2.6'],
-            "2.7" => $row['2.7'],
-            "2.8" => $row['2.8'],
-            "3.1.1" => $row['3.1.1'],
-            "3.1.2" => $row['3.1.2'],
-            "3.1.3" => $row['3.1.3'],
-            "3.1.4" => $row['3.1.4'],
-            "3.2.1" => $row['3.2.1'],
-            "3.2.2" => $row['3.2.2'],
-            "3.2.3" => $row['3.2.3'],
-            "3.2.4" => $row['3.2.4'],
-            "3.2.5" => $row['3.2.5'],
-            "3.2.6" => $row['3.2.6'],
-            "4.1.1" => $row['4.1.1'],
-            "4.1.2" => $row['4.1.2'],
-            "4.1.3" => $row['4.1.3'],
-            "4.1.4" => $row['4.1.4'],
-            "4.2.1" => $row['4.2.1'],
-            "4.2.2" => $row['4.2.2'],
-            "4.2.3" => $row['4.2.3'],
-            "4.2.4" => $row['4.2.4'],
-            "5.1" => $row['5.1'],
-            "5.2" => $row['5.2'],
-            "5.3" => $row['5.3'],
-            "5.4" => $row['5.4'],
-            "5.5" => $row['5.5'],
-            "5.6" => $row['5.6']
+            "1.1" => floatval($row['1.1']),
+            "1.2" => floatval($row['1.2']),
+            "1.3" => floatval($row['1.3']),
+            "1.4" => floatval($row['1.4']),
+            "1.5" => floatval($row['1.5']),
+            "1.6" => floatval($row['1.6']),
+            "2.1" => floatval($row['2.1']),
+            "2.2" => floatval($row['2.2']),
+            "2.3" => floatval($row['2.3']),
+            "2.4" => floatval($row['2.4']),
+            "2.5" => floatval($row['2.5']),
+            "2.6" => floatval($row['2.6']),
+            "2.7" => floatval($row['2.7']),
+            "2.8" => floatval($row['2.8']),
+            "3.1.1" => floatval($row['3.1.1']),
+            "3.1.2" => floatval($row['3.1.2']),
+            "3.1.3" => floatval($row['3.1.3']),
+            "3.1.4" => floatval($row['3.1.4']),
+            "3.2.1" => floatval($row['3.2.1']),
+            "3.2.2" => floatval($row['3.2.2']),
+            "3.2.3" => floatval($row['3.2.3']),
+            "3.2.4" => floatval($row['3.2.4']),
+            "3.2.5" => floatval($row['3.2.5']),
+            "3.2.6" => floatval($row['3.2.6']),
+            "4.1.1" => floatval($row['4.1.1']),
+            "4.1.2" => floatval($row['4.1.2']),
+            "4.1.3" => floatval($row['4.1.3']),
+            "4.1.4" => floatval($row['4.1.4']),
+            "4.2.1" => floatval($row['4.2.1']),
+            "4.2.2" => floatval($row['4.2.2']),
+            "4.2.3" => floatval($row['4.2.3']),
+            "4.2.4" => floatval($row['4.2.4']),
+            "5.1" => floatval($row['5.1']),
+            "5.2" => floatval($row['5.2']),
+            "5.3" => floatval($row['5.3']),
+            "5.4" => floatval($row['5.4']),
+            "5.5" => floatval($row['5.5']),
+            "5.6" => floatval($row['5.6'])
         ];
     }
 } else {
     header("Location: " . BASEURL);
 }
-
-echo var_dump($data)
 
 ?>
 
@@ -122,6 +119,8 @@ echo var_dump($data)
             <h1 class="text-center">CON JÓVENES</h1>
         </div>
 
+        <?= var_dump($data); ?>
+
         <!-- first form -->
         <div class="m-2 p-2 rounded primary-bg-color">
             <h3 class="text-center text-white">PERFIL GENERAL PROCESOS DE PASTORAL CON JÓVENES<h3>
@@ -137,7 +136,15 @@ echo var_dump($data)
                         datasets: [
                             {
                                 label: 'Resultados',
-                                data: [3, 3, 3, 3, 3, 3, 3],
+                                data: [
+                                    <?=$data["1.1"]?> + <?=$data["1.2"]?> + <?=$data["1.3"]?> + <?=$data["1.4"]?> + <?=$data["1.5"]?> + <?=$data["1.6"]?>,
+                                    <?=$data["2.1"]?> + <?=$data["2.2"]?> + <?=$data["2.3"]?> + <?=$data["2.4"]?> + <?=$data["2.5"]?> + <?=$data["2.6"]?> + <?=$data["2.7"]?> + <?=$data["2.8"]?>,
+                                    <?=$data["3.1.1"]?> + <?=$data["3.1.2"]?> + <?=$data["3.1.3"]?> + <?=$data["3.1.4"]?>,
+                                    <?=$data["3.2.1"]?> + <?=$data["3.2.2"]?> + <?=$data["3.2.3"]?> + <?=$data["3.2.4"]?> + <?=$data["3.2.5"]?> + <?=$data["3.2.6"]?>,
+                                    <?=$data["4.1.1"]?> + <?=$data["4.1.2"]?> + <?=$data["4.1.3"]?> + <?=$data["4.1.4"]?>,
+                                    <?=$data["4.2.1"]?> + <?=$data["4.2.2"]?> + <?=$data["4.2.3"]?> + <?=$data["4.2.4"]?>,
+                                    <?=$data["5.1"]?> + <?=$data["5.2"]?> + <?=$data["5.3"]?> + <?=$data["5.4"]?> + <?=$data["5.5"]?> + <?=$data["5.6"]?>
+                                ],
                                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                                 borderColor: 'rgba(255, 99, 132, 1)',
                                 borderWidth: 1
@@ -145,10 +152,100 @@ echo var_dump($data)
                         ]
                     },
                     options: {
-                        aspectRatio: 2
+                        aspectRatio: 1,
+                        scale: {
+                            min: 0,
+                            max: 10,
+                            stepSize: 1
+                        },
                     }
                 });
             </script>
+        </div>
+
+
+        <!-- sencond form -->
+        <div class="d-md-flex">
+            <!-- sencond first form -->
+            <div class=" col-md-6">
+                <div class="m-2 p-2 rounded primary-bg-color">
+                    <h3 class="text-center text-white">ELEMENTOS ESENCIALES POR ÁREA<h3>
+                </div>
+                <canvas id="elementos-esenciales-por-area"></canvas>
+                <script>
+                    const ctxElementosEsencialesPorArea = document.getElementById('elementos-esenciales-por-area').getContext('2d');
+                    const chartElementosEsencialesPorArea = new Chart(ctxElementosEsencialesPorArea, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Responsable', 'Equipo Pastoral con Jóvenes'],
+                            datasets: [
+                                {
+                                    label: 'Resultados',
+                                    data: [
+                                        <?=$data["1.4"]?>,
+                                        <?=$data["1.1"]?>
+                                    ],
+                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                    borderWidth: 1
+                                }
+                            ]
+                        },
+                        options: {
+                            aspectRatio: 1,
+                            indexAxis: 'y',
+                            legend: {
+                                position: 'right',
+                            },
+                            scale: {
+                                min: 0,
+                                max: 3,
+                                stepSize: 0.5
+                            },
+                        }
+                    });
+                </script>
+            </div>
+            <!-- sencond first form -->
+            <div class=" col-md-6">
+                <div class="m-2 p-2 rounded primary-bg-color">
+                    <h3 class="text-center text-white">ELEMENTOS COMPLEMENTARIOS POR ÁREA<h3>
+                </div>
+                <canvas id="elementos-esenciales-por-area"></canvas>
+                <script>
+                    const ctxElementosEsencialesPorArea = document.getElementById('elementos-esenciales-por-area').getContext('2d');
+                    const chartElementosEsencialesPorArea = new Chart(ctxElementosEsencialesPorArea, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Responsable', 'Equipo Pastoral con Jóvenes'],
+                            datasets: [
+                                {
+                                    label: 'Resultados',
+                                    data: [
+                                        <?=$data["1.4"]?>,
+                                        <?=$data["1.1"]?>
+                                    ],
+                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                    borderWidth: 1
+                                }
+                            ]
+                        },
+                        options: {
+                            aspectRatio: 1,
+                            indexAxis: 'y',
+                            legend: {
+                                position: 'right',
+                            },
+                            scale: {
+                                min: 0,
+                                max: 3,
+                                stepSize: 0.5
+                            },
+                        }
+                    });
+                </script>
+            </div>
         </div>
 
 
