@@ -39,7 +39,7 @@
 
 
         //Redirect to the next page
-        header("Location: ".BASEURL."/form/five.php");
+        header("Location: ".BASEURL."/form/five");
     }
 
 ?>
@@ -47,7 +47,7 @@
     <div class="mt-5 mb-5 p-3 p-md-5 m-5 col-11 rounded" id="scuare">
 
 
-        <form action="four.php" method="post">
+        <form action="four" method="post">
             <!-- First form -->
             <p class="text-center">Preguntas sobre: </p>
             <h3 class="text-center ">METODOLOGÍA</h3>

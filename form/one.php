@@ -34,7 +34,7 @@
 
 
         //Redirect to the next page
-        header("Location: ".BASEURL."/form/two.php");
+        header("Location: ".BASEURL."/form/two");
     }
 
 ?>
@@ -45,7 +45,7 @@
         <p class="text-center">Preguntas sobre: </p>
         <h3 class="text-center ">EL EQUIPO DE TRABAJO</h3>
         <hr class="m-4">
-        <form action="one.php" method="post">
+        <form action="one" method="post">
             <ol>
                 <?php
                 for ($i = 1; $i < count($questions1) + 1; $i++) {

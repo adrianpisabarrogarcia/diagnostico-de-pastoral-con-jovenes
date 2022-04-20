@@ -106,6 +106,22 @@ input {
     color: white;
 }
 
+.secondary-bg-color {
+    background-color: var(--second-color);
+    color: white;
+}
+
+.third-bg-color {
+    background-color: var(--rpj-color);
+    color: white;
+}
+
+.fourth-bg-color {
+    background-color: var(--main-bg-color);
+    color: black;
+}
+
+
 
 
 .progress-bar {

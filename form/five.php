@@ -33,7 +33,7 @@
 
 
         //Redirect to the next page
-        header("Location: ".BASEURL."/results.php?id=" . $token);
+        header("Location: ".BASEURL."/results?id=" . $token);
     }
 
 ?>
@@ -44,7 +44,7 @@
         <p class="text-center">Preguntas sobre: </p>
         <h3 class="text-center ">COMUNICACIÓN Y REDES</h3>
         <hr class="m-4">
-        <form action="five.php" method="post">
+        <form action="five" method="post">
             <ol>
                 <?php
                 for ($i = 1; $i < count($questions5) + 1; $i++) {

@@ -167,7 +167,7 @@ if (count($rows) > 0) {
 
         <div class="d-md-flex">
             <div class="col-md-6">
-                <div class="m-2 p-2 rounded primary-bg-color">
+                <div class="m-2 p-2 rounded third-bg-color">
                     <h3 class="text-center text-white">ELEMENTOS ESENCIALES POR ÁREA<h3>
                 </div>
                 <script>
@@ -431,7 +431,7 @@ if (count($rows) > 0) {
 
 
             <div class="col-md-6">
-                <div class="m-2 p-2 rounded primary-bg-color">
+                <div class="m-2 p-2 rounded secondary-bg-color">
                     <h3 class="text-center text-white">ELEMENTOS COMPLEMENTARIOS POR ÁREA<h3>
                 </div>
                 <script>

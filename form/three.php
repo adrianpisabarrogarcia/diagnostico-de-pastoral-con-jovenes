@@ -43,7 +43,7 @@
 
 
         //Redirect to the next page
-        header("Location: ".BASEURL."/form/four.php");
+        header("Location: ".BASEURL."/form/four");
     }
 
 ?>

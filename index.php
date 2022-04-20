@@ -30,7 +30,7 @@ if (isset($_POST["submit"])) {
     insertDatosUusarioNoNull($nombre, $email, $movimiento);
 
     //Redireccion
-    header("Location: " . BASEURL . "/form/one.php");
+    header("Location: " . BASEURL . "/form/one");
 }
 
 
@@ -84,7 +84,7 @@ function comprobarTokenUnico($token)
             <div class="text-center">
 
             </div>
-            <form action="index.php" method="post" name="form-comienzo">
+            <form action="index" method="post" name="form-comienzo">
                 <div class="form-group mb-3 text-center">
                     <label for="nombre" class="mb-2">🙋‍♀️&nbsp;Tu nombre </label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Pepe" required>
