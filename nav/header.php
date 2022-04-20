@@ -43,6 +43,8 @@ session_start();
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"
             integrity="sha256-7lWo7cjrrponRJcS6bc8isfsPDwSKoaYfGIHgSheQkk=" crossorigin="anonymous"></script>
+    <!-- JSPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/style.css">
 

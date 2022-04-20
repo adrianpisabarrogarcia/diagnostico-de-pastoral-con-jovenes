@@ -5,6 +5,6 @@ Es básicamente una serie de formularios realizados en PHP, donde los datos son 
 - [✅] Formularios
 - [] Meta para posición de Google
 - [] Ocultar los .php
-- [] Página de resultados
+- [✅] Página de resultados
 - [] Explicación del README.md
 - [✅] Exportación de la base de datos

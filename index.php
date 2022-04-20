@@ -1,6 +1,9 @@
 <?php require_once "./nav/header.php"; ?>
 <?php
 
+session_destroy();
+session_start();
+
 //Generar en sesión un token
 //Cerrar la sesion si esta abierta
 if(!isset($_SESSION['token'])){
@@ -10,6 +13,8 @@ if(!isset($_SESSION['token'])){
 function generarTokenUnico(){
     return sha1(mt_rand(1, 90000) . 'SALT');
 }
+
+//echo $_SESSION["token"];
 
 //Comprobar si el usuario envia el formulario
 if (isset($_POST["submit"])) {

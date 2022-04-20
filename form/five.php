@@ -17,7 +17,7 @@
         ];
 
         $token = $_SESSION['token'];
-        $query = " UPDATE usuarios SET `1.1` = " . $data["5.1"] .
+        $query = " UPDATE usuarios SET `5.1` = " . $data["5.1"] .
             ", `5.2` = " . $data["5.2"] .
             ", `5.3` = " . $data["5.3"] .
             ", `5.4` = " . $data["5.4"] .

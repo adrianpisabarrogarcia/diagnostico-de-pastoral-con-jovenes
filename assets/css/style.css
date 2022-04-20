@@ -24,9 +24,10 @@ h3, h4, h5, h6 {
 }
 
 :root {
-    --main-bg-color: #46F9F9;
-    --second-color: #93278F;
+    --main-bg-color: rgba(70, 249, 249, 1);
+    --second-color: rgba(147, 39, 143, 1);
     --third-color: #5e5e5e;
+    --rpj-color: rgba(150, 201, 3, 1);
 }
 
 body {
@@ -109,4 +110,15 @@ input {
 .form-check-input:checked{
     background-color: var(--second-color);
     border-color: var(--second-color);
+}
+
+/* height charts */
+.wrapper {
+    height: 350px !important;
+}
+
+/* print media-query */
+@page {
+    size: 25cm 35.7cm;
+    margin: 5mm 5mm 5mm 5mm; /* change the margins as you want them to be. */
 }
