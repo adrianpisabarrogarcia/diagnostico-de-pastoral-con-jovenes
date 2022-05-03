@@ -127,43 +127,14 @@ if (count($rows) > 0) {
         <div class="m-2 p-2 rounded primary-bg-color">
             <h3 class="text-center text-white">PERFIL GENERAL PROCESOS DE PASTORAL CON JÓVENES<h3>
         </div>
-        <div class="mt-5 mb-5">
-            <canvas id="equipo-trabajo" width="900" height="500"></canvas>
-            <script>
-                const ctxEquipoTrabajo = document.getElementById('equipo-trabajo').getContext('2d');
-                const chartEquipoTrabajo = new Chart(ctxEquipoTrabajo, {
-                    type: 'radar',
-                    data: {
-                        labels: ['Equipo de trabajo', 'Proyecto Evangelizador', 'Proceso/Intinerario', 'Procesos/Transversales', 'Metodología/Acompañamiento', 'Metodología/Personalización', 'Comunicación y redes'],
-                        datasets: [
-                            {
-                                label: 'Perfil general'.toUpperCase(),
-                                data: [
-                                    <?=$data["1.1"]?> + <?=$data["1.2"]?> + <?=$data["1.3"]?> + <?=$data["1.4"]?> + <?=$data["1.5"]?> + <?=$data["1.6"]?>,
-                                    <?=$data["2.1"]?> + <?=$data["2.2"]?> + <?=$data["2.3"]?> + <?=$data["2.4"]?> + <?=$data["2.5"]?> + <?=$data["2.6"]?> + <?=$data["2.7"]?> + <?=$data["2.8"]?>,
-                                    <?=$data["3.1.1"]?> + <?=$data["3.1.2"]?> + <?=$data["3.1.3"]?> + <?=$data["3.1.4"]?>,
-                                    <?=$data["3.2.1"]?> + <?=$data["3.2.2"]?> + <?=$data["3.2.3"]?> + <?=$data["3.2.4"]?> + <?=$data["3.2.5"]?> + <?=$data["3.2.6"]?>,
-                                    <?=$data["4.1.1"]?> + <?=$data["4.1.2"]?> + <?=$data["4.1.3"]?> + <?=$data["4.1.4"]?>,
-                                    <?=$data["4.2.1"]?> + <?=$data["4.2.2"]?> + <?=$data["4.2.3"]?> + <?=$data["4.2.4"]?>,
-                                    <?=$data["5.1"]?> + <?=$data["5.2"]?> + <?=$data["5.3"]?> + <?=$data["5.4"]?> + <?=$data["5.5"]?> + <?=$data["5.6"]?>
-                                ],
-                                backgroundColor: 'rgba(70, 249, 249, 0.2)',
-                                borderColor: 'rgba(70, 249, 249, 1)',
-                                borderWidth: 1
-                            }
-                        ]
-                    },
-                    options: {
-                        scale: {
-                            min: 0,
-                            max: 10,
-                            stepSize: 1
-                        },
-                        responsive: true,
-                        maintainAspectRatio: false,
-                    }
-                });
-            </script>
+
+        <div class="">
+
+
+
+
+
+
         </div>
 
 
