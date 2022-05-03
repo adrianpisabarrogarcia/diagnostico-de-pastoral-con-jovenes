@@ -132,3 +132,14 @@ input {
     background-color: var(--second-color);
     border-color: var(--second-color);
 }
+
+/* height charts */
+.wrapper {
+    height: 350px !important;
+}
+
+/* print media-query */
+@page {
+    size: 25cm 35.7cm;
+    margin: 5mm 5mm 5mm 5mm; /* change the margins as you want them to be. */
+}
