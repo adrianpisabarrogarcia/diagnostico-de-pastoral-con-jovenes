@@ -125,7 +125,8 @@ if (count($rows) > 0) {
         </div>
 
         <div class="m-2 p-2 rounded primary-bg-color">
-            <h3 class="text-center text-white">PERFIL GENERAL PROCESOS DE PASTORAL CON JÓVENES<h3>
+            <h3 class="text-center text-white text-decoration-underline">PERFIL GENERAL PROCESOS DE PASTORAL CON JÓVENES
+                <h3>
         </div>
         <div class="mt-5 mb-5">
             <canvas id="equipo-trabajo" width="900" height="500"></canvas>
@@ -167,17 +168,20 @@ if (count($rows) > 0) {
         </div>
 
 
-        <div class="d-md-flex">
-            <div class="col-md-6">
+        <section>
+            <section>
                 <div class="m-2 p-2 rounded third-bg-color">
-                    <h3 class="text-center text-white">ELEMENTOS ESENCIALES POR ÁREA<h3>
+                    <h3 class="text-center text-white text-underline text-decoration-underline">ELEMENTOS ESENCIALES POR
+                        ÁREA<h3>
                 </div>
                 <script>
                     const redPjColorOp = 'rgba(150, 201, 3, 0.2)';
                     const redPjColor = 'rgba(150, 201, 3, 1)';
                 </script>
-                <div class="m-5">
-                    <canvas id="equipo-de-trabajo-uno"></canvas>
+
+                <h4 class="text-center m-3">EQUIPO DE TRABAJO</h4>
+                <div style="padding-left: 15%; padding-right: 15%">
+                    <canvas id="equipo-de-trabajo-uno" width="900" height="300"></canvas>
                     <script>
                         const ctxEquipoDeTrabajoUno = document.getElementById('equipo-de-trabajo-uno').getContext('2d');
                         const chartEquipoDeTrabajoUno = new Chart(ctxEquipoDeTrabajoUno, {
@@ -186,7 +190,7 @@ if (count($rows) > 0) {
                                 labels: ['Responsable', 'Equipo Pastoral con Jóvenes'],
                                 datasets: [
                                     {
-                                        label: 'Equipo de trabajo'.toUpperCase(),
+                                        label: 'Sobre 3 puntos',
                                         data: [
                                             <?=$data["1.4"]?>,
                                             <?=$data["1.1"]?>
@@ -211,6 +215,7 @@ if (count($rows) > 0) {
                         });
                     </script>
                 </div>
+                <h4 class="text-center m-3">PROYECTO EVANGELIZADOR</h4>
                 <div class="m-5">
                     <canvas id="proyecto-evangelizador"></canvas>
                     <script>
@@ -221,7 +226,7 @@ if (count($rows) > 0) {
                                 labels: ['Proyecto'],
                                 datasets: [
                                     {
-                                        label: 'Proyecto Evangelizador'.toUpperCase(),
+                                        label: 'Sobre 3 puntos',
                                         data: [
                                             <?=$data["2.1"]?>
                                         ],
@@ -245,6 +250,7 @@ if (count($rows) > 0) {
                         });
                     </script>
                 </div>
+                <h4 class="text-center m-3">PROCESO - INTINERARIO</h4>
                 <div class="m-5">
                     <canvas id="proceso-intinerario"></canvas>
                     <script>
@@ -255,7 +261,7 @@ if (count($rows) > 0) {
                                 labels: ['Discenimiento vocacional', 'Comunidad Cristiana', 'Intinerario Pastoral con Jóvenes'],
                                 datasets: [
                                     {
-                                        label: 'Proceso - Intinerario'.toUpperCase(),
+                                        label: 'Sobre 3 puntos',
                                         data: [
                                             <?=$data["3.1.4"]?>,
                                             <?=$data["3.1.3"]?>,
@@ -281,7 +287,7 @@ if (count($rows) > 0) {
                         });
                     </script>
                 </div>
-
+                <h4 class="text-center m-3">PROCESO - TRANSVERSALES</h4>
                 <div class="m-5">
                     <canvas id="proceso-transversales"></canvas>
                     <script>
@@ -292,7 +298,7 @@ if (count($rows) > 0) {
                                 labels: ['Formación de líderes', 'Oferta grupos de fe'],
                                 datasets: [
                                     {
-                                        label: 'Proceso - Transversales'.toUpperCase(),
+                                        label: 'Sobre 3 puntos',
                                         data: [
                                             <?=$data["3.2.6"]?>,
                                             <?=$data["3.2.1"]?>
@@ -317,7 +323,7 @@ if (count($rows) > 0) {
                         });
                     </script>
                 </div>
-
+                <h4 class="text-center m-3">METODOLOGÍA - ACOMPAÑAMIENTO</h4>
                 <div class="m-5">
                     <canvas id="metodologia-acompanamiento"></canvas>
                     <script>
@@ -328,7 +334,7 @@ if (count($rows) > 0) {
                                 labels: ['Proceso de pastoral coherente', 'Encuentros con comunidades cristianas', 'Acompañamiento personal'],
                                 datasets: [
                                     {
-                                        label: 'Metodología - Acompañamiento'.toUpperCase(),
+                                        label: 'Sobre 3 puntos',
                                         data: [
                                             <?=$data["4.1.4"]?>,
                                             <?=$data["4.1.3"]?>,
@@ -354,7 +360,7 @@ if (count($rows) > 0) {
                         });
                     </script>
                 </div>
-
+                <h4 class="text-center m-3">PROYECTO EVANGELIZADOR</h4>
                 <div class="m-5">
                     <canvas id="metodologia-personalizacion"></canvas>
                     <script>
@@ -391,7 +397,7 @@ if (count($rows) > 0) {
                         });
                     </script>
                 </div>
-
+                <h4 class="text-center m-3">PROYECTO EVANGELIZADOR</h4>
                 <div class="m-5">
                     <canvas id="comunicacion-redes"></canvas>
                     <script>
@@ -427,12 +433,9 @@ if (count($rows) > 0) {
                         });
                     </script>
                 </div>
+            </section>
 
-
-            </div>
-
-
-            <div class="col-md-6">
+            <section>
                 <div class="m-2 p-2 rounded secondary-bg-color">
                     <h3 class="text-center text-white">ELEMENTOS COMPLEMENTARIOS POR ÁREA<h3>
                 </div>
@@ -726,19 +729,20 @@ if (count($rows) > 0) {
                 </div>
 
 
-            </div>
-        </div>
-        <hr>
-        <div class="d-md-flex justify-content-center w-100">
-            <div class="m-5 text-center">
-                <a href="https://rpj.es" target="_blank" class="btn btn-primary text-center w-100">🏠 Ir a rpj.es</a>
-            </div>
-            <div class="m-5 text-center">
-                <a href="<?= BASEURL ?>" class="btn btn-primary text-center w-100">📝 Volver a realizar el formulario</a>
-            </div>
-        </div>
+            </section>
 
     </div>
+    <hr>
+    <div class="d-md-flex justify-content-center w-100">
+        <div class="m-5 text-center">
+            <a href="https://rpj.es" target="_blank" class="btn btn-primary text-center w-100">🏠 Ir a rpj.es</a>
+        </div>
+        <div class="m-5 text-center">
+            <a href="<?= BASEURL ?>" class="btn btn-primary text-center w-100">📝 Volver a realizar el formulario</a>
+        </div>
+    </div>
+
+</div>
 
 
 </div>
