@@ -159,7 +159,7 @@ if (count($rows) > 0) {
         <section>
             <section>
                 <div class="m-2 p-2 rounded third-bg-color">
-                    <h3 class="text-center text-white text-underline text-decoration-underline">ELEMENTOS ESENCIALES POR
+                    <h3 class="text-center text-white text-decoration-underline">ELEMENTOS ESENCIALES POR
                         ÁREA<h3>
                 </div>
                 <script>
@@ -411,7 +411,7 @@ if (count($rows) > 0) {
 
             <section>
                 <div class="m-2 p-2 rounded secondary-bg-color">
-                    <h3 class="text-center text-white">ELEMENTOS COMPLEMENTARIOS POR ÁREA<h3>
+                    <h3 class="text-center text-white text-decoration-underline">ELEMENTOS COMPLEMENTARIOS POR ÁREA<h3>
                 </div>
                 <script>
                     const generalColorOp = 'rgba(147, 39, 143, 0.2)';
