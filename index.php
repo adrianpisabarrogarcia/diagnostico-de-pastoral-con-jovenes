@@ -47,7 +47,7 @@ function comprobarTokenUnico($token)
     //Comprobar si el token es único
     $conn = conectarBD();
     $esUnico = true;
-    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE token = '" . $token . "'");
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE id = '" . $token . "'");
     $stmt->execute();
     desconectarBD($conn);
     $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
