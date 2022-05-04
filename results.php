@@ -125,7 +125,7 @@ if (count($rows) > 0) {
                 const chartEquipoTrabajo = new Chart(ctxEquipoTrabajo, {
                     type: 'radar',
                     data: {
-                        labels: ['Equipo de trabajo', 'Proyecto Evangelizador', 'Proceso/Intinerario', 'Procesos/Transversales', 'Metodología/Acompañamiento', 'Metodología/Personalización', 'Comunicación y redes'],
+                        labels: ['Equipo de trabajo', 'Proyecto Evangelizador', 'Proceso/Itinerario', 'Procesos/Transversales', 'Metodología/Acompañamiento', 'Metodología/Personalización', 'Comunicación y redes'],
                         datasets: [{
                             label: 'Perfil general'.toUpperCase(),
                             data: [
@@ -242,7 +242,7 @@ if (count($rows) > 0) {
                         const chartProcesoIntinerario = new Chart(ctxProcesoIntinerario, {
                             type: 'bar',
                             data: {
-                                labels: ['Discenimiento vocacional', 'Comunidad Cristiana', 'Intinerario Pastoral con Jóvenes'],
+                                labels: ['Discenimiento vocacional', 'Comunidad Cristiana', 'Itinerario Pastoral con Jóvenes'],
                                 datasets: [{
                                     label: 'Sobre 3 puntos',
                                     data: [
