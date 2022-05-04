@@ -79,7 +79,9 @@ if (count($rows) > 0) {
 <div class="row justify-content-center align-items-center">
 
     <div class="mt-5 mb-5 p-3 p-md-5 m-5 col-11 rounded" id="scuare">
-
+        <div class="mb-5 d-flex justify-content-center m-2">
+            <img style="width: 100%" src="<?php echo BASEURL; ?>/assets/img/logo-herramienta-2.jpg">
+        </div>
         <!-- title -->
         <h3 class="text-center ">LOS RESULTADOS 🧮</h3>
         <p class="text-center">Evaluar es algo importante, felicitaciones por las áreas en las que has cumplido las
@@ -91,8 +93,7 @@ if (count($rows) > 0) {
             </p>
             <div class="col-12 col-md-4 ">
                 <div class="text-center input-group">
-                    <input id="actual-url" type="url" class="form-control" aria-label="url of the page"
-                           aria-describedby="url of the page" readonly>
+                    <input id="actual-url" type="url" class="form-control" aria-label="url of the page" aria-describedby="url of the page" readonly>
                     <button class="btn btn-primary" type="button" id="copy-link">🔗 Copiar enlace</button>
                 </div>
             </div>
@@ -111,20 +112,9 @@ if (count($rows) > 0) {
             </div>
         </div>
 
-        <hr class="m-4">
 
         <!-- the results -->
-        <div class="d-flex justify-content-center m-2">
-            <img style="width: 10%" src="<?php echo BASEURL; ?>/assets/img/logo.jpg">
-        </div>
-
-        <div class="mb-5">
-            <h1 class="text-center">HERRAMIENTA</h1>
-            <h2 class="text-center">DIAGNÓSTICO PASTORAL</h2>
-            <h1 class="text-center">CON JÓVENES</h1>
-        </div>
-
-        <div class="m-2 p-2 rounded primary-bg-color">
+        <div class="m-2 p-2 mt-5 rounded primary-bg-color">
             <h3 class="text-center text-white text-decoration-underline">PERFIL GENERAL PROCESOS DE PASTORAL CON JÓVENES
                 <h3>
         </div>
@@ -136,23 +126,21 @@ if (count($rows) > 0) {
                     type: 'radar',
                     data: {
                         labels: ['Equipo de trabajo', 'Proyecto Evangelizador', 'Proceso/Intinerario', 'Procesos/Transversales', 'Metodología/Acompañamiento', 'Metodología/Personalización', 'Comunicación y redes'],
-                        datasets: [
-                            {
-                                label: 'Perfil general'.toUpperCase(),
-                                data: [
-                                    <?=$data["1.1"]?> + <?=$data["1.2"]?> + <?=$data["1.3"]?> + <?=$data["1.4"]?> + <?=$data["1.5"]?> + <?=$data["1.6"]?>,
-                                    <?=$data["2.1"]?> + <?=$data["2.2"]?> + <?=$data["2.3"]?> + <?=$data["2.4"]?> + <?=$data["2.5"]?> + <?=$data["2.6"]?> + <?=$data["2.7"]?> + <?=$data["2.8"]?>,
-                                    <?=$data["3.1.1"]?> + <?=$data["3.1.2"]?> + <?=$data["3.1.3"]?> + <?=$data["3.1.4"]?>,
-                                    <?=$data["3.2.1"]?> + <?=$data["3.2.2"]?> + <?=$data["3.2.3"]?> + <?=$data["3.2.4"]?> + <?=$data["3.2.5"]?> + <?=$data["3.2.6"]?>,
-                                    <?=$data["4.1.1"]?> + <?=$data["4.1.2"]?> + <?=$data["4.1.3"]?> + <?=$data["4.1.4"]?>,
-                                    <?=$data["4.2.1"]?> + <?=$data["4.2.2"]?> + <?=$data["4.2.3"]?> + <?=$data["4.2.4"]?>,
-                                    <?=$data["5.1"]?> + <?=$data["5.2"]?> + <?=$data["5.3"]?> + <?=$data["5.4"]?> + <?=$data["5.5"]?> + <?=$data["5.6"]?>
-                                ],
-                                backgroundColor: 'rgba(70, 249, 249, 0.2)',
-                                borderColor: 'rgba(70, 249, 249, 1)',
-                                borderWidth: 1
-                            }
-                        ]
+                        datasets: [{
+                            label: 'Perfil general'.toUpperCase(),
+                            data: [
+                                <?= $data["1.1"] ?> + <?= $data["1.2"] ?> + <?= $data["1.3"] ?> + <?= $data["1.4"] ?> + <?= $data["1.5"] ?> + <?= $data["1.6"] ?>,
+                                <?= $data["2.1"] ?> + <?= $data["2.2"] ?> + <?= $data["2.3"] ?> + <?= $data["2.4"] ?> + <?= $data["2.5"] ?> + <?= $data["2.6"] ?> + <?= $data["2.7"] ?> + <?= $data["2.8"] ?>,
+                                <?= $data["3.1.1"] ?> + <?= $data["3.1.2"] ?> + <?= $data["3.1.3"] ?> + <?= $data["3.1.4"] ?>,
+                                <?= $data["3.2.1"] ?> + <?= $data["3.2.2"] ?> + <?= $data["3.2.3"] ?> + <?= $data["3.2.4"] ?> + <?= $data["3.2.5"] ?> + <?= $data["3.2.6"] ?>,
+                                <?= $data["4.1.1"] ?> + <?= $data["4.1.2"] ?> + <?= $data["4.1.3"] ?> + <?= $data["4.1.4"] ?>,
+                                <?= $data["4.2.1"] ?> + <?= $data["4.2.2"] ?> + <?= $data["4.2.3"] ?> + <?= $data["4.2.4"] ?>,
+                                <?= $data["5.1"] ?> + <?= $data["5.2"] ?> + <?= $data["5.3"] ?> + <?= $data["5.4"] ?> + <?= $data["5.5"] ?> + <?= $data["5.6"] ?>
+                            ],
+                            backgroundColor: 'rgba(70, 249, 249, 0.2)',
+                            borderColor: 'rgba(70, 249, 249, 1)',
+                            borderWidth: 1
+                        }]
                     },
                     options: {
                         scale: {
@@ -180,26 +168,24 @@ if (count($rows) > 0) {
                 </script>
 
                 <h4 class="text-center m-3">EQUIPO DE TRABAJO</h4>
-                <div style="padding-left: 15%; padding-right: 15%">
-                    <canvas id="equipo-de-trabajo-uno" width="900" height="300"></canvas>
+                <div class="graph">
+                    <canvas id="equipo-de-trabajo-uno"></canvas>
                     <script>
                         const ctxEquipoDeTrabajoUno = document.getElementById('equipo-de-trabajo-uno').getContext('2d');
                         const chartEquipoDeTrabajoUno = new Chart(ctxEquipoDeTrabajoUno, {
                             type: 'bar',
                             data: {
                                 labels: ['Responsable', 'Equipo Pastoral con Jóvenes'],
-                                datasets: [
-                                    {
-                                        label: 'Sobre 3 puntos',
-                                        data: [
-                                            <?=$data["1.4"]?>,
-                                            <?=$data["1.1"]?>
-                                        ],
-                                        backgroundColor: redPjColorOp,
-                                        borderColor: redPjColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["1.4"] ?>,
+                                        <?= $data["1.1"] ?>
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
@@ -216,7 +202,7 @@ if (count($rows) > 0) {
                     </script>
                 </div>
                 <h4 class="text-center m-3">PROYECTO EVANGELIZADOR</h4>
-                <div class="m-5">
+                <div class="graph">
                     <canvas id="proyecto-evangelizador"></canvas>
                     <script>
                         const ctxProyectoEvangelizador = document.getElementById('proyecto-evangelizador').getContext('2d');
@@ -224,17 +210,15 @@ if (count($rows) > 0) {
                             type: 'bar',
                             data: {
                                 labels: ['Proyecto'],
-                                datasets: [
-                                    {
-                                        label: 'Sobre 3 puntos',
-                                        data: [
-                                            <?=$data["2.1"]?>
-                                        ],
-                                        backgroundColor: redPjColorOp,
-                                        borderColor: redPjColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["2.1"] ?>
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
@@ -251,7 +235,7 @@ if (count($rows) > 0) {
                     </script>
                 </div>
                 <h4 class="text-center m-3">PROCESO - INTINERARIO</h4>
-                <div class="m-5">
+                <div class="graph">
                     <canvas id="proceso-intinerario"></canvas>
                     <script>
                         const ctxProcesoIntinerario = document.getElementById('proceso-intinerario').getContext('2d');
@@ -259,19 +243,17 @@ if (count($rows) > 0) {
                             type: 'bar',
                             data: {
                                 labels: ['Discenimiento vocacional', 'Comunidad Cristiana', 'Intinerario Pastoral con Jóvenes'],
-                                datasets: [
-                                    {
-                                        label: 'Sobre 3 puntos',
-                                        data: [
-                                            <?=$data["3.1.4"]?>,
-                                            <?=$data["3.1.3"]?>,
-                                            <?=$data["3.1.1"]?>
-                                        ],
-                                        backgroundColor: redPjColorOp,
-                                        borderColor: redPjColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["3.1.4"] ?>,
+                                        <?= $data["3.1.3"] ?>,
+                                        <?= $data["3.1.1"] ?>
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
@@ -288,7 +270,7 @@ if (count($rows) > 0) {
                     </script>
                 </div>
                 <h4 class="text-center m-3">PROCESO - TRANSVERSALES</h4>
-                <div class="m-5">
+                <div class="graph">
                     <canvas id="proceso-transversales"></canvas>
                     <script>
                         const ctxProcesoTransversales = document.getElementById('proceso-transversales').getContext('2d');
@@ -296,18 +278,16 @@ if (count($rows) > 0) {
                             type: 'bar',
                             data: {
                                 labels: ['Formación de líderes', 'Oferta grupos de fe'],
-                                datasets: [
-                                    {
-                                        label: 'Sobre 3 puntos',
-                                        data: [
-                                            <?=$data["3.2.6"]?>,
-                                            <?=$data["3.2.1"]?>
-                                        ],
-                                        backgroundColor: redPjColorOp,
-                                        borderColor: redPjColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["3.2.6"] ?>,
+                                        <?= $data["3.2.1"] ?>
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
@@ -324,7 +304,7 @@ if (count($rows) > 0) {
                     </script>
                 </div>
                 <h4 class="text-center m-3">METODOLOGÍA - ACOMPAÑAMIENTO</h4>
-                <div class="m-5">
+                <div class="graph">
                     <canvas id="metodologia-acompanamiento"></canvas>
                     <script>
                         const ctxMetodologiaAcompanamiento = document.getElementById('metodologia-acompanamiento').getContext('2d');
@@ -332,19 +312,17 @@ if (count($rows) > 0) {
                             type: 'bar',
                             data: {
                                 labels: ['Proceso de pastoral coherente', 'Encuentros con comunidades cristianas', 'Acompañamiento personal'],
-                                datasets: [
-                                    {
-                                        label: 'Sobre 3 puntos',
-                                        data: [
-                                            <?=$data["4.1.4"]?>,
-                                            <?=$data["4.1.3"]?>,
-                                            <?=$data["4.1.1"]?>
-                                        ],
-                                        backgroundColor: redPjColorOp,
-                                        borderColor: redPjColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["4.1.4"] ?>,
+                                        <?= $data["4.1.3"] ?>,
+                                        <?= $data["4.1.1"] ?>
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
@@ -360,8 +338,8 @@ if (count($rows) > 0) {
                         });
                     </script>
                 </div>
-                <h4 class="text-center m-3">PROYECTO EVANGELIZADOR</h4>
-                <div class="m-5">
+                <h4 class="text-center m-3">METODOLOGÍA - PERSONALIZACIÓN</h4>
+                <div class="graph">
                     <canvas id="metodologia-personalizacion"></canvas>
                     <script>
                         const ctxMetodologiaPersonalizacion = document.getElementById('metodologia-personalizacion').getContext('2d');
@@ -369,19 +347,17 @@ if (count($rows) > 0) {
                             type: 'bar',
                             data: {
                                 labels: ['Momentos de discernimiento', 'Experiencias fuertes', 'Pedagogía experimental'],
-                                datasets: [
-                                    {
-                                        label: 'Metodología - Personalización'.toUpperCase(),
-                                        data: [
-                                            <?=$data["4.2.4"]?>,
-                                            <?=$data["4.2.3"]?>,
-                                            <?=$data["4.2.1"]?>
-                                        ],
-                                        backgroundColor: redPjColorOp,
-                                        borderColor: redPjColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["4.2.4"] ?>,
+                                        <?= $data["4.2.3"] ?>,
+                                        <?= $data["4.2.1"] ?>
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
@@ -397,8 +373,8 @@ if (count($rows) > 0) {
                         });
                     </script>
                 </div>
-                <h4 class="text-center m-3">PROYECTO EVANGELIZADOR</h4>
-                <div class="m-5">
+                <h4 class="text-center m-3">COMUNICACIÓN Y REDES</h4>
+                <div class="graph">
                     <canvas id="comunicacion-redes"></canvas>
                     <script>
                         const ctxComunicacionRedes = document.getElementById('comunicacion-redes').getContext('2d');
@@ -406,18 +382,16 @@ if (count($rows) > 0) {
                             type: 'bar',
                             data: {
                                 labels: ['Encuentros interinstitucionales', 'Estrategia de comunicación'],
-                                datasets: [
-                                    {
-                                        label: 'Comunicación y Redes'.toUpperCase(),
-                                        data: [
-                                            <?=$data["5.3"]?>,
-                                            <?=$data["5.1"]?>
-                                        ],
-                                        backgroundColor: redPjColorOp,
-                                        borderColor: redPjColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["5.3"] ?>,
+                                        <?= $data["5.1"] ?>
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
@@ -443,7 +417,8 @@ if (count($rows) > 0) {
                     const generalColorOp = 'rgba(147, 39, 143, 0.2)';
                     const generalColor = 'rgba(147, 39, 143, 1)';
                 </script>
-                <div class="m-5">
+                <h4 class="text-center m-3 secondary-color">EQUIPO DE TRABAJO</h4>
+                <div class="graph">
                     <canvas id="complementario-equipo-de-trabajo"></canvas>
                     <script>
                         const ctxComplementariosEquipoDeTrabajo = document.getElementById('complementario-equipo-de-trabajo').getContext('2d');
@@ -451,37 +426,35 @@ if (count($rows) > 0) {
                             type: 'bar',
                             data: {
                                 labels: ['Comunicación', 'Recursos', 'Estabilidad', 'Formación'],
-                                datasets: [
-                                    {
-                                        label: 'Equipo de trabajo'.toUpperCase(),
-                                        data: [
-                                            <?=$data["1.6"]?>,
-                                            <?=$data["1.5"]?>,
-                                            <?=$data["1.3"]?>,
-                                            <?=$data["1.2"]?>
-                                        ],
-                                        backgroundColor: generalColorOp,
-                                        borderColor: generalColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["1.6"] ?> * 3,
+                                        <?= $data["1.5"] ?> * 3,
+                                        <?= $data["1.3"] ?> * 3,
+                                        <?= $data["1.2"] ?> * 3
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
                                 legend: {
                                     position: 'right',
                                 },
-                                scales: {
+                                scale: {
                                     min: 0,
-                                    max: 1,
-                                    stepSize: 0.2
+                                    max: 3,
+                                    stepSize: 0.5
                                 }
                             }
                         });
                     </script>
                 </div>
-
-                <div class="m-5">
+                <h4 class="text-center m-3 secondary-color">PROYECTO EVANGELIZADOR</h4>
+                <div class="graph">
                     <canvas id="complementario-proyecto-evangelizador"></canvas>
                     <script>
                         const ctxComplementariosProyectoEvangelizador = document.getElementById('complementario-proyecto-evangelizador').getContext('2d');
@@ -497,40 +470,39 @@ if (count($rows) > 0) {
                                     'Evaluación periódica',
                                     'Programación anual'
                                 ],
-                                datasets: [
-                                    {
-                                        label: 'Proyecto Evangelizador'.toUpperCase(),
-                                        data: [
-                                            <?=$data["2.8"]?>,
-                                            <?=$data["2.7"]?>,
-                                            <?=$data["2.6"]?>,
-                                            <?=$data["2.5"]?>,
-                                            <?=$data["2.4"]?>,
-                                            <?=$data["2.3"]?>,
-                                            <?=$data["2.2"]?>
-                                        ],
-                                        backgroundColor: generalColorOp,
-                                        borderColor: generalColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["2.8"] ?> * 3,
+                                        <?= $data["2.7"] ?> * 3,
+                                        <?= $data["2.6"] ?> * 3,
+                                        <?= $data["2.5"] ?> * 3,
+                                        <?= $data["2.4"] ?> * 3,
+                                        <?= $data["2.3"] ?> * 3,
+                                        <?= $data["2.2"] ?> * 3
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
                                 legend: {
                                     position: 'right',
                                 },
-                                scales: {
+                                scale: {
                                     min: 0,
-                                    max: 1,
-                                    stepSize: 0.2
+                                    max: 3,
+                                    stepSize: 0.5
                                 }
                             }
                         });
                     </script>
                 </div>
+                <h4 class="text-center m-3 secondary-color">PROCESO - INTINERARIO</h4>
 
-                <div class="m-5">
+                <div class="graph">
                     <canvas id="complementario-proceso-intinerario"></canvas>
                     <script>
                         const ctxComplementariosProcesoIntinerario = document.getElementById('complementario-proceso-intinerario').getContext('2d');
@@ -540,17 +512,15 @@ if (count($rows) > 0) {
                                 labels: [
                                     'Discernimiento vocacional'
                                 ],
-                                datasets: [
-                                    {
-                                        label: 'Proceso - Intinerario'.toUpperCase(),
-                                        data: [
-                                            <?=$data["3.1.2"]?>
-                                        ],
-                                        backgroundColor: generalColorOp,
-                                        borderColor: generalColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["3.1.2"] ?> * 3
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
@@ -559,16 +529,15 @@ if (count($rows) > 0) {
                                 },
                                 scale: {
                                     min: 0,
-                                    max: 1,
-                                    stepSize: 0.2
+                                    max: 3,
+                                    stepSize: 3
                                 }
                             }
                         });
                     </script>
                 </div>
-
-
-                <div class="m-5">
+                <h4 class="text-center m-3 secondary-color">PROCESO - TRANSVERSALES</h4>
+                <div class="graph">
                     <canvas id="complementario-proceso-transversales"></canvas>
                     <script>
                         const ctxComplementariosProcesoTransversales = document.getElementById('complementario-proceso-transversales').getContext('2d');
@@ -581,37 +550,36 @@ if (count($rows) > 0) {
                                     'Tiempo libre',
                                     'Voluntariado/servicio'
                                 ],
-                                datasets: [
-                                    {
-                                        label: 'Proceso - Transversales'.toUpperCase(),
-                                        data: [
-                                            <?=$data["3.2.5"]?>,
-                                            <?=$data["3.2.4"]?>,
-                                            <?=$data["3.2.3"]?>,
-                                            <?=$data["3.2.2"]?>
-                                        ],
-                                        backgroundColor: generalColorOp,
-                                        borderColor: generalColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["3.2.5"] ?> * 3,
+                                        <?= $data["3.2.4"] ?> * 3,
+                                        <?= $data["3.2.3"] ?> * 3,
+                                        <?= $data["3.2.2"] ?> * 3
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
                                 legend: {
                                     position: 'right',
                                 },
-                                scales: {
+                                scale: {
                                     min: 0,
-                                    max: 1,
-                                    stepSize: 0.2
+                                    max: 3,
+                                    stepSize: 0.5
                                 }
                             }
                         });
                     </script>
                 </div>
+                <h4 class="text-center m-3 secondary-color">METODOLOGÍA - ACOMPAÑAMIENTO</h4>
 
-                <div class="m-5">
+                <div class="graph">
                     <canvas id="complementario-metodologia-acompanamiento"></canvas>
                     <script>
                         const ctxComplementariosMetodologiaAcompanamiento = document.getElementById('complementario-metodologia-acompanamiento').getContext('2d');
@@ -621,17 +589,15 @@ if (count($rows) > 0) {
                                 labels: [
                                     'Formación en acompañamiento'
                                 ],
-                                datasets: [
-                                    {
-                                        label: 'Metodología - Acompañamiento'.toUpperCase(),
-                                        data: [
-                                            <?=$data["4.1.2"]?>
-                                        ],
-                                        backgroundColor: generalColorOp,
-                                        borderColor: generalColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["4.1.2"] ?> * 3
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
@@ -640,15 +606,16 @@ if (count($rows) > 0) {
                                 },
                                 scale: {
                                     min: 0,
-                                    max: 1,
-                                    stepSize: 0.2
+                                    max: 3,
+                                    stepSize: 0.5
                                 }
                             }
                         });
                     </script>
                 </div>
+                <h4 class="text-center m-3 secondary-color">METODOLOGÍA - PERSONALIZACIÓN</h4>
 
-                <div class="m-5">
+                <div class="graph">
                     <canvas id="complementario-metodologia-personalizacion"></canvas>
                     <script>
                         const ctxComplementariosMetodologiaPersonalizacion = document.getElementById('complementario-metodologia-personalizacion').getContext('2d');
@@ -658,17 +625,15 @@ if (count($rows) > 0) {
                                 labels: [
                                     'Jóvenes líderes'
                                 ],
-                                datasets: [
-                                    {
-                                        label: 'Metodología - Personalizacion'.toUpperCase(),
-                                        data: [
-                                            <?=$data["4.2.3"]?>
-                                        ],
-                                        backgroundColor: generalColorOp,
-                                        borderColor: generalColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["4.2.3"] * 3 ?>
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
@@ -677,15 +642,16 @@ if (count($rows) > 0) {
                                 },
                                 scale: {
                                     min: 0,
-                                    max: 1,
-                                    stepSize: 0.2
+                                    max: 3,
+                                    stepSize: 0.5
                                 }
                             }
                         });
                     </script>
                 </div>
+                <h4 class="text-center m-3 secondary-color">COMUNICACIÓN Y REDES</h4>
 
-                <div class="m-5">
+                <div class="graph">
                     <canvas id="complementario-comunicacion-redes"></canvas>
                     <script>
                         const ctxComplementariosComunicacionRedes = document.getElementById('complementario-comunicacion-redes').getContext('2d');
@@ -698,30 +664,28 @@ if (count($rows) > 0) {
                                     'Trabajo en red eclesial',
                                     'Redes sociales'
                                 ],
-                                datasets: [
-                                    {
-                                        label: 'Comunicación y Redes'.toUpperCase(),
-                                        data: [
-                                            <?=$data["5.6"]?>,
-                                            <?=$data["5.5"]?>,
-                                            <?=$data["5.4"]?>,
-                                            <?=$data["5.2"]?>
-                                        ],
-                                        backgroundColor: generalColorOp,
-                                        borderColor: generalColor,
-                                        borderWidth: 1
-                                    }
-                                ]
+                                datasets: [{
+                                    label: 'Sobre 3 puntos',
+                                    data: [
+                                        <?= $data["5.6"] ?> * 3,
+                                        <?= $data["5.5"] ?> * 3,
+                                        <?= $data["5.4"] ?> * 3,
+                                        <?= $data["5.2"] ?> * 3
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }]
                             },
                             options: {
                                 indexAxis: 'y',
                                 legend: {
                                     position: 'right',
                                 },
-                                scales: {
+                                scale: {
                                     min: 0,
-                                    max: 1,
-                                    stepSize: 0.2
+                                    max: 3,
+                                    stepSize: 0.5
                                 }
                             }
                         });
@@ -730,17 +694,20 @@ if (count($rows) > 0) {
 
 
             </section>
+        </section>
+
+        <hr class="m-5">
+        <div class="d-md-flex justify-content-center w-100">
+            <div class="m-2 text-center">
+                <a href="https://rpj.es" target="_blank" class="btn btn-primary text-center w-100">🏠 Ir a rpj.es</a>
+            </div>
+            <div class="m-2 text-center">
+                <a href="<?= BASEURL ?>" class="btn btn-primary text-center w-100">📝 Volver a realizar el formulario</a>
+            </div>
+        </div>
 
     </div>
-    <hr>
-    <div class="d-md-flex justify-content-center w-100">
-        <div class="m-5 text-center">
-            <a href="https://rpj.es" target="_blank" class="btn btn-primary text-center w-100">🏠 Ir a rpj.es</a>
-        </div>
-        <div class="m-5 text-center">
-            <a href="<?= BASEURL ?>" class="btn btn-primary text-center w-100">📝 Volver a realizar el formulario</a>
-        </div>
-    </div>
+
 
 </div>
 
@@ -752,13 +719,12 @@ if (count($rows) > 0) {
 
 
 <script>
-
     //current url
     var url = window.location.href;
     //put the url in the input
     document.querySelector("#actual-url").value = url;
     //copy the url to the clipboard when the button is clicked
-    document.querySelector("#copy-link").addEventListener("click", function () {
+    document.querySelector("#copy-link").addEventListener("click", function() {
         document.querySelector("#actual-url").select();
         document.execCommand("copy");
     });
@@ -768,22 +734,10 @@ if (count($rows) > 0) {
     var toastTrigger = document.getElementById('copy-link')
     var toastLiveExample = document.getElementById('copy-link-toast')
     if (toastTrigger) {
-        toastTrigger.addEventListener('click', function () {
+        toastTrigger.addEventListener('click', function() {
             var toast = new bootstrap.Toast(toastLiveExample)
 
             toast.show()
         })
     }
-
-
 </script>
-
-
-
-
-
-
-
-
-
-

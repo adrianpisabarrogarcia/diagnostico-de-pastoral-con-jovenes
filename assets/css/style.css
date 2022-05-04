@@ -101,6 +101,10 @@ input {
     color: var(--second-color);
 }
 
+.secondary-color {
+    color: var(--rpj-color);
+}
+
 .primary-bg-color {
     background-color: var(--third-color);
     color: white;
@@ -124,6 +128,7 @@ input {
 
 
 
+
 .progress-bar {
     background-color: var(--second-color);
 }
@@ -142,4 +147,12 @@ input {
 @page {
     size: 25cm 35.7cm;
     margin: 5mm 5mm 5mm 5mm; /* change the margins as you want them to be. */
+}
+
+/* media queries for graphs */
+@media only screen and (min-width: 768px) {
+    .graph {
+        padding-left: 15%; 
+        padding-right: 15%
+    }
 }
