@@ -80,7 +80,7 @@ if (count($rows) > 0) {
 
     <div class="mt-5 mb-5 p-3 p-md-5 m-5 col-11 rounded" id="scuare">
         <div class="mb-5 d-flex justify-content-center m-2">
-            <img style="width: 100%" src="<?php echo BASEURL; ?>/assets/img/logo-herramienta-2.jpg">
+            <img style="width: 100%" src="<?php echo BASEURL; ?>/assets/img/logo-herramienta-1.jpg">
         </div>
         <!-- title -->
         <h3 class="text-center ">LOS RESULTADOS 🧮</h3>
