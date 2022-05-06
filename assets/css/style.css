@@ -153,6 +153,10 @@ input {
 @media only screen and (min-width: 768px) {
     .graph {
         padding-left: 15%; 
-        padding-right: 15%
+        padding-right: 15%;
+    }
+    .graph-small {
+        padding-left: 30%;
+        padding-right: 30%;
     }
 }
