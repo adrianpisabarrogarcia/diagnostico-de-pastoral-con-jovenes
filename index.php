@@ -91,7 +91,7 @@ function comprobarTokenUnico($token)
                            required>
                 </div>
                 <div class="form-group mb-3 text-center">
-                    <label for="movimiento" class="mb-2">⛪️&nbsp;Movimiento al que perteneces </label>
+                    <label for="movimiento" class="mb-2">⛪️&nbsp;Institución eclesial a la que perteneces </label>
                     <input type="text" class="form-control" id="movimiento" placeholder="Escolapios" name="movimiento"
                            required>
                 </div>
