@@ -58,7 +58,7 @@
             <p class="text-center">Preguntas sobre: </p>
             <h3 class="text-center ">PROYECTO EVANGELIZADOR</h3>
             <p class="text-center fst-italic">Más concretamente sobre el:</p>
-            <h4 class="text-center ">INTENERARIO</h4>
+            <h4 class="text-center ">ITINERARIO</h4>
             <hr class="m-4">
             <ol>
                 <?php

@@ -74,7 +74,7 @@ function comprobarTokenUnico($token)
                 <h2 class="text-center">DIAGNÓSTICO PASTORAL</h2>
                 <h1 class="text-center">CON JÓVENES</h1>
                 <p class="text-center">
-                    <b>¿Quieres saber si tienes las 🛠 perfectas en tu pastoral?</b> Contesta a este formulario y te ayudaremos a identificar qué aréas necesitas mejorar 👨‍🔧 o de lo contrario celebrarlo 🎉.
+                    <b>¿Quieres saber si tienes las 🛠 perfectas en tu pastoral?</b> Contesta a este formulario y te ayudaremos a identificar qué áreas necesitas mejorar 👨‍🔧 o de lo contrario celebrarlo 🎉.
                 </p>
             </div>
             <div class="text-center">
