@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
-/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');*/
+
 @font-face {
     font-family: bigjohn;
     src: url(../fonts/bigjohn.otf);
@@ -141,6 +141,13 @@ input {
 /* height charts */
 .wrapper {
     height: 350px !important;
+}
+
+/* text readble better */
+.text-readble{
+    line-height: 2;
+    padding: 20px;
+    width: 70%;
 }
 
 /* print media-query */

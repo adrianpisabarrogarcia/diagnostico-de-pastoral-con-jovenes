@@ -83,24 +83,25 @@ if (count($rows) > 0) {
             <img style="width: 100%" src="<?php echo BASEURL; ?>/assets/img/logo-herramienta-1.jpg">
         </div>
         <!-- title -->
-        <h3 class="text-center ">LOS RESULTADOS 🧮</h3>
-        <p class="text-center">La herramienta que te presentamos te ofrece hacer un diagnóstico rápido (individual o en
-            equipo) de tu pastoral con jóvenes. Para ello hemos repartido un total de 70 puntos entre los 7 bloques que
-            se evalúan, de modo que cada uno de ellos valga 10 puntos. En cada bloque hay algunos “elementos esenciales”
-            que, por su importancia, valen 3 puntos y el resto, como “elementos complementarios”, valen 1 punto. Esta
-            ponderación viene determinada por nuestra manera de entender la pastoral con jóvenes, pero en un análisis
-            posterior tú mismo puedes valorarla desde tus propias convicciones o acentos con los resultados que te
-            ofrecemos.
-        </p>
-
+        <h3 class="text-center">LOS RESULTADOS 🧮</h3>
+        <div class="d-flex flex-column justify-content-center align-content-center align-items-center">
+            <div class="text-center text-secondary text-readble">La herramienta que te presentamos te ofrece hacer un diagnóstico rápido (individual o en
+                equipo) de tu pastoral con jóvenes. Para ello hemos repartido un total de 70 puntos entre los 7 bloques que
+                se evalúan, de modo que cada uno de ellos valga 10 puntos. En cada bloque hay algunos “elementos esenciales”
+                que, por su importancia, valen 3 puntos y el resto, como “elementos complementarios”, valen 1 punto. Esta
+                ponderación viene determinada por nuestra manera de entender la pastoral con jóvenes, pero en un análisis
+                posterior tú mismo puedes valorarla desde tus propias convicciones o acentos con los resultados que te
+                ofrecemos.
+            </div>
+        </div>
+        <hr>
         <div class="d-flex flex-column justify-content-center align-content-center align-items-center ali">
             <p class="text-center m-2 primary-color">
                 Puedes compartir estos resultados con quien quieras, incluso guardarte el enlace para ti mismo:
             </p>
             <div class="col-12 col-md-4 m-2">
                 <div class="text-center input-group">
-                    <input id="actual-url" type="url" class="form-control" aria-label="url of the page"
-                           aria-describedby="url of the page" readonly>
+                    <input id="actual-url" type="url" class="form-control" aria-label="url of the page" aria-describedby="url of the page" readonly>
                     <button class="btn btn-primary" type="button" id="copy-link">🔗 Copiar enlace</button>
                 </div>
 
@@ -144,7 +145,15 @@ if (count($rows) > 0) {
                 const chartEquipoTrabajo = new Chart(ctxEquipoTrabajo, {
                     type: 'radar',
                     data: {
-                        labels: ['Equipo de trabajo', 'Proyecto Evangelizador', 'Proceso/Itinerario', 'Procesos/Transversales', 'Metodología/Acompañamiento', 'Metodología/Personalización', 'Comunicación y redes'],
+                        labels: [
+                            'Equipo de trabajo',
+                            'Proyecto Evangelizador',
+                            'Proceso/Itinerario',
+                            'Procesos/Transversales',
+                            'Metodología/Acompañamiento',
+                            'Metodología/Personalización',
+                            'Comunicación y redes'
+                        ],
                         datasets: [{
                             label: 'Perfil general'.toUpperCase(),
                             data: [
@@ -178,80 +187,80 @@ if (count($rows) > 0) {
         <section>
             <script>
                 //Define colors for the charts
-                const redPjColorOp = 'rgba(150, 201, 3, 0.2)';
-                const redPjColor = 'rgba(150, 201, 3, 1)';
-                const generalColorOp = 'rgba(147, 39, 143, 0.2)';
-                const generalColor = 'rgba(147, 39, 143, 1)';
+                const redPjColorOp = 'rgba(150, 201, 3, 0.2)'
+                const redPjColor = 'rgba(150, 201, 3, 1)'
+                const generalColorOp = 'rgba(147, 39, 143, 0.2)'
+                const generalColor = 'rgba(147, 39, 143, 1)'
+                const esecialesText = 'Esenciales'
+                const complementariosText = 'Complementarios'
+                const options = {
+                    indexAxis: 'y',
+                    legend: {
+                        position: 'right',
+                    },
+                    scale: [{
+                            min: 0,
+                            max: 3,
+                            stepSize: 0.5
+                        },
+                        {
+                            min: 0,
+                            max: 3,
+                            stepSize: 0.5
+                        }
+                    ]
+                }
             </script>
 
             <div class="m-2 p-2 mt-5 rounded primary-bg-color">
                 <h3 class="text-center text-white text-decoration-underline">EQUIPO DE TRABAJO<h3>
             </div>
             <div class="graph">
-                <canvas id="equipo-de-trabajo-uno" height="100"></canvas>
+                <canvas id="equipo-de-trabajo" height=""></canvas>
                 <script>
-                    const ctxEquipoDeTrabajoUno = document.getElementById('equipo-de-trabajo-uno').getContext('2d');
-                    const chartEquipoDeTrabajoUno = new Chart(ctxEquipoDeTrabajoUno, {
+                    const ctxEquipoDeTrabajo = document.getElementById('equipo-de-trabajo').getContext('2d');
+                    const chartEquipoDeTrabajo = new Chart(ctxEquipoDeTrabajo, {
                         type: 'bar',
                         data: {
-                            labels: ['Responsable', 'Equipo Pastoral con Jóvenes'],
+                            labels: [
+                                'Equipo Pastoral con Jóvenes',
+                                'Reponsable',
+                                'Formación',
+                                'Establidad',
+                                'Recursos',
+                                'Comunicación'
+                            ],
                             datasets: [{
-                                label: 'Elementos esenciales por área',
-                                data: [
-                                    <?= $data["1.4"] ?>,
-                                    <?= $data["1.1"] ?>
-                                ],
-                                backgroundColor: redPjColorOp,
-                                borderColor: redPjColor,
-                                borderWidth: 1
-                            }]
+                                    label: esecialesText,
+                                    data: [
+                                        <?= $data["1.1"] ?>,
+                                        <?= $data["1.4"] ?>,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: complementariosText,
+                                    data: [
+                                        0,
+                                        0,
+                                        <?= $data["1.2"] ?>,
+                                        <?= $data["1.3"] ?>,
+                                        <?= $data["1.5"] ?>,
+                                        <?= $data["1.6"] ?>
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }
+                            ]
                         },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scale: {
-                                min: 0,
-                                max: 3,
-                                stepSize: 0.5
-                            }
-                        }
-                    });
-                </script>
-            </div>
-            <div class="graph-small">
-                <canvas id="complementario-equipo-de-trabajo"></canvas>
-                <script>
-                    const ctxComplementariosEquipoDeTrabajo = document.getElementById('complementario-equipo-de-trabajo').getContext('2d');
-                    const chartComplementariosEquipoDeTrabajo = new Chart(ctxComplementariosEquipoDeTrabajo, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Comunicación', 'Recursos', 'Estabilidad', 'Formación'],
-                            datasets: [{
-                                label: 'Elementos complementarios por área',
-                                data: [
-                                    <?= $data["1.6"] ?>,
-                                    <?= $data["1.5"] ?>,
-                                    <?= $data["1.3"] ?>,
-                                    <?= $data["1.2"] ?>
-                                ],
-                                backgroundColor: generalColorOp,
-                                borderColor: generalColor,
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scale: {
-                                min: 0,
-                                max: 1,
-                                stepSize: 0.5
-                            }
-                        }
+                        options: options
                     });
                 </script>
             </div>
@@ -259,80 +268,57 @@ if (count($rows) > 0) {
                 <h3 class="text-center text-white text-decoration-underline">PROYECTO EVANGELIZADOR<h3>
             </div>
             <div class="graph">
-                <canvas id="proyecto-evangelizador" height="100"></canvas>
+                <canvas id="proyecto-evangelizador" height=""></canvas>
                 <script>
                     const ctxProyectoEvangelizador = document.getElementById('proyecto-evangelizador').getContext('2d');
-                    const chartProyectoEvangelizador = new Chart(ctxProyectoEvangelizador, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Proyecto'],
-                            datasets: [{
-                                label: 'Elementos esenciales por área',
-                                data: [
-                                    <?= $data["2.1"] ?>
-                                ],
-                                backgroundColor: redPjColorOp,
-                                borderColor: redPjColor,
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scale: {
-                                min: 0,
-                                max: 3,
-                                stepSize: 0.5
-                            }
-                        }
-                    });
-                </script>
-            </div>
-            <div class="graph-small">
-                <canvas id="complementario-proyecto-evangelizador"></canvas>
-                <script>
-                    const ctxComplementariosProyectoEvangelizador = document.getElementById('complementario-proyecto-evangelizador').getContext('2d');
-                    const chartComplementariosProyectoEvangelizador = new Chart(ctxComplementariosProyectoEvangelizador, {
+                    const charProyectoEvangelizador = new Chart(ctxProyectoEvangelizador, {
                         type: 'bar',
                         data: {
                             labels: [
-                                'Estructura pastoral',
-                                'Proceso de selección',
-                                'Principios',
-                                'Presupuesto',
-                                'Plan de mejora',
+                                'Proyecto',
+                                'Programación anual',
                                 'Evaluación periódica',
-                                'Programación anual'
+                                'Plan de mejora',
+                                'Presupuesto',
+                                'Principios',
+                                'Proceso de selección',
+                                'Estructura pastoral'
                             ],
                             datasets: [{
-                                label: 'Elementos complementarios por área',
-                                data: [
-                                    <?= $data["2.8"] ?>,
-                                    <?= $data["2.7"] ?>,
-                                    <?= $data["2.6"] ?>,
-                                    <?= $data["2.5"] ?>,
-                                    <?= $data["2.4"] ?>,
-                                    <?= $data["2.3"] ?>,
-                                    <?= $data["2.2"] ?>
-                                ],
-                                backgroundColor: generalColorOp,
-                                borderColor: generalColor,
-                                borderWidth: 1
-                            }]
+                                    label: esecialesText,
+                                    data: [
+                                        <?= $data["2.1"] ?>,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: complementariosText,
+                                    data: [
+                                        0,
+                                        <?= $data["2.2"] ?>,
+                                        <?= $data["2.3"] ?>,
+                                        <?= $data["2.4"] ?>,
+                                        <?= $data["2.5"] ?>,
+                                        <?= $data["2.6"] ?>,
+                                        <?= $data["2.7"] ?>,
+                                        <?= $data["2.8"] ?>,
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }
+                            ]
                         },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scale: {
-                                min: 0,
-                                max: 1,
-                                stepSize: 0.5
-                            }
-                        }
+                        options: options
                     });
                 </script>
             </div>
@@ -340,70 +326,43 @@ if (count($rows) > 0) {
                 <h3 class="text-center text-white text-decoration-underline">PROCESO - ITINERARIO<h3>
             </div>
             <div class="graph">
-                <canvas id="proceso-intinerario" height="100"></canvas>
+                <canvas id="proceso-itinerario" height=""></canvas>
                 <script>
-                    const ctxProcesoIntinerario = document.getElementById('proceso-intinerario').getContext('2d');
-                    const chartProcesoIntinerario = new Chart(ctxProcesoIntinerario, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Discenimiento vocacional', 'Comunidad Cristiana', 'Itinerario Pastoral con Jóvenes'],
-                            datasets: [{
-                                label: 'Elementos esenciales por área',
-                                data: [
-                                    <?= $data["3.1.4"] ?>,
-                                    <?= $data["3.1.3"] ?>,
-                                    <?= $data["3.1.1"] ?>
-                                ],
-                                backgroundColor: redPjColorOp,
-                                borderColor: redPjColor,
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scales: {
-                                min: 0,
-                                max: 3,
-                                stepSize: 0.5
-                            }
-                        }
-                    });
-                </script>
-            </div>
-            <div class="graph-small">
-                <canvas id="complementario-proceso-intinerario"></canvas>
-                <script>
-                    const ctxComplementariosProcesoIntinerario = document.getElementById('complementario-proceso-intinerario').getContext('2d');
-                    const chartComplementariosProcesoIntinerario = new Chart(ctxComplementariosProcesoIntinerario, {
+                    const ctxProcesoItinerario = document.getElementById('proceso-itinerario').getContext('2d');
+                    const charProcesoItinerario = new Chart(ctxProcesoItinerario, {
                         type: 'bar',
                         data: {
                             labels: [
+                                'Itinerario Pastoral con Jóvenes',
+                                'Comunidad cristiana',
                                 'Discernimiento vocacional'
                             ],
                             datasets: [{
-                                label: 'Elementos complementarios por área',
-                                data: [
-                                    <?= $data["3.1.2"] ?>
-                                ],
-                                backgroundColor: generalColorOp,
-                                borderColor: generalColor,
-                                borderWidth: 1
-                            }]
+                                    label: esecialesText,
+                                    data: [
+                                        <?= $data["3.1.1"] ?>,
+                                        <?= $data["3.1.3"] ?>,
+                                        <?= $data["3.1.4"] ?>,
+                                        
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: complementariosText,
+                                    data: [
+                                        0,
+                                        0,
+                                        <?= $data["3.1.2"] ?>
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }
+                            ]
                         },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scale: {
-                                min: 0,
-                                max: 1,
-                                stepSize: 3
-                            }
-                        }
+                        options: options
                     });
                 </script>
             </div>
@@ -411,75 +370,52 @@ if (count($rows) > 0) {
                 <h3 class="text-center text-white text-decoration-underline">PROCESO - TRANSVERSALES<h3>
             </div>
             <div class="graph">
-                <canvas id="proceso-transversales" height="100"></canvas>
+                <canvas id="proceso-transversales" height=""></canvas>
                 <script>
                     const ctxProcesoTransversales = document.getElementById('proceso-transversales').getContext('2d');
-                    const chartProcesoTransversales = new Chart(ctxProcesoTransversales, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Formación de líderes', 'Oferta grupos de fe'],
-                            datasets: [{
-                                label: 'Elementos esenciales por área',
-                                data: [
-                                    <?= $data["3.2.6"] ?>,
-                                    <?= $data["3.2.1"] ?>
-                                ],
-                                backgroundColor: redPjColorOp,
-                                borderColor: redPjColor,
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scale: {
-                                min: 0,
-                                max: 3,
-                                stepSize: 0.5
-                            }
-                        }
-                    });
-                </script>
-            </div>
-            <div class="graph-small">
-                <canvas id="complementario-proceso-transversales"></canvas>
-                <script>
-                    const ctxComplementariosProcesoTransversales = document.getElementById('complementario-proceso-transversales').getContext('2d');
-                    const chartComplementariosProcesoTransversales = new Chart(ctxComplementariosProcesoTransversales, {
+                    const charProcesoTransversales = new Chart(ctxProcesoTransversales, {
                         type: 'bar',
                         data: {
                             labels: [
-                                'Oración',
-                                'Celebraciones litúrgicas',
+                                'Oferta grupos de fe',
+                                'Formación de líderes',
+                                'Voluntario/Servicio',
                                 'Tiempo libre',
-                                'Voluntariado/servicio'
+                                'Celebraciones litúrgicas',
+                                'Oración'
                             ],
                             datasets: [{
-                                label: 'Elementos complementarios por área',
-                                data: [
-                                    <?= $data["3.2.5"] ?>,
-                                    <?= $data["3.2.4"] ?>,
-                                    <?= $data["3.2.3"] ?>,
-                                    <?= $data["3.2.2"] ?>
-                                ],
-                                backgroundColor: generalColorOp,
-                                borderColor: generalColor,
-                                borderWidth: 1
-                            }]
+                                    label: esecialesText,
+                                    data: [
+                                        <?= $data["3.2.1"] ?>,
+                                        <?= $data["3.2.6"] ?>,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                        
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: complementariosText,
+                                    data: [
+                                        0,
+                                        0,
+                                        <?= $data["3.2.2"] ?>,
+                                        <?= $data["3.2.3"] ?>,
+                                        <?= $data["3.2.4"] ?>,
+                                        <?= $data["3.2.5"] ?>
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }
+                            ]
                         },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scale: {
-                                min: 0,
-                                max: 1,
-                                stepSize: 0.5
-                            }
-                        }
+                        options: options
                     });
                 </script>
             </div>
@@ -487,70 +423,46 @@ if (count($rows) > 0) {
                 <h3 class="text-center text-white text-decoration-underline">METODOLOGÍA - ACOMPAÑAMIENTO<h3>
             </div>
             <div class="graph">
-                <canvas id="metodologia-acompanamiento" height="100"></canvas>
+                <canvas id="proceso-acompanamiento" height=""></canvas>
                 <script>
-                    const ctxMetodologiaAcompanamiento = document.getElementById('metodologia-acompanamiento').getContext('2d');
-                    const chartMetodologiaAcompanamiento = new Chart(ctxMetodologiaAcompanamiento, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Proceso de pastoral coherente', 'Encuentros con comunidades cristianas', 'Acompañamiento personal'],
-                            datasets: [{
-                                label: 'Elementos esenciales por área',
-                                data: [
-                                    <?= $data["4.1.4"] ?>,
-                                    <?= $data["4.1.3"] ?>,
-                                    <?= $data["4.1.1"] ?>
-                                ],
-                                backgroundColor: redPjColorOp,
-                                borderColor: redPjColor,
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scale: {
-                                min: 0,
-                                max: 3,
-                                stepSize: 0.5
-                            }
-                        }
-                    });
-                </script>
-            </div>
-            <div class="graph-small">
-                <canvas id="complementario-metodologia-acompanamiento"></canvas>
-                <script>
-                    const ctxComplementariosMetodologiaAcompanamiento = document.getElementById('complementario-metodologia-acompanamiento').getContext('2d');
-                    const chartComplementariosMetodologiaAcompanamiento = new Chart(ctxComplementariosMetodologiaAcompanamiento, {
+                    const ctxMetodologiaAcompañamiento = document.getElementById('proceso-acompanamiento').getContext('2d');
+                    const charMetodologiaAcompanamiento = new Chart(ctxMetodologiaAcompañamiento, {
                         type: 'bar',
                         data: {
                             labels: [
-                                'Elementos complementarios por área'
+                                'Acompañamiento personal',
+                                'Encuentros con comunidades cristianas',
+                                'Proceso de pastoral coherente',
+                                'Formación en acompañamiento'
                             ],
                             datasets: [{
-                                label: 'Sobre 3 puntos',
-                                data: [
-                                    <?= $data["4.1.2"] ?>
-                                ],
-                                backgroundColor: generalColorOp,
-                                borderColor: generalColor,
-                                borderWidth: 1
-                            }]
+                                    label: esecialesText,
+                                    data: [
+                                        <?= $data["4.1.1"] ?>,
+                                        <?= $data["4.1.3"] ?>,
+                                        <?= $data["4.1.4"] ?>,
+                                        0
+                                        
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: complementariosText,
+                                    data: [
+                                        0,
+                                        0,
+                                        0,
+                                        <?= $data["4.1.2"] ?>
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }
+                            ]
                         },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scale: {
-                                min: 0,
-                                max: 1,
-                                stepSize: 0.5
-                            }
-                        }
+                        options: options
                     });
                 </script>
             </div>
@@ -558,70 +470,46 @@ if (count($rows) > 0) {
                 <h3 class="text-center text-white text-decoration-underline">METODOLOGÍA - PERSONALIZACIÓN<h3>
             </div>
             <div class="graph">
-                <canvas id="metodologia-personalizacion" height="100"></canvas>
+                <canvas id="proceso-personalizacion" height=""></canvas>
                 <script>
-                    const ctxMetodologiaPersonalizacion = document.getElementById('metodologia-personalizacion').getContext('2d');
-                    const chartMetodologiapersonalizacion = new Chart(ctxMetodologiaPersonalizacion, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Momentos de discernimiento', 'Experiencias fuertes', 'Pedagogía experimental'],
-                            datasets: [{
-                                label: 'Elementos esenciales por área',
-                                data: [
-                                    <?= $data["4.2.4"] ?>,
-                                    <?= $data["4.2.3"] ?>,
-                                    <?= $data["4.2.1"] ?>
-                                ],
-                                backgroundColor: redPjColorOp,
-                                borderColor: redPjColor,
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scale: {
-                                min: 0,
-                                max: 3,
-                                stepSize: 0.5
-                            }
-                        }
-                    });
-                </script>
-            </div>
-            <div class="graph-small">
-                <canvas id="complementario-metodologia-personalizacion"></canvas>
-                <script>
-                    const ctxComplementariosMetodologiaPersonalizacion = document.getElementById('complementario-metodologia-personalizacion').getContext('2d');
-                    const chartComplementariosMetodologiaPersonalziacion = new Chart(ctxComplementariosMetodologiaPersonalizacion, {
+                    const ctxProcesoPersonalizacion = document.getElementById('proceso-personalizacion').getContext('2d');
+                    const charProcesoPersonalizacion = new Chart(ctxProcesoPersonalizacion, {
                         type: 'bar',
                         data: {
                             labels: [
+                                'Pedagogía experiencial',
+                                'Experiencias fuertes',
+                                'Momentos de discernimiento',
                                 'Jóvenes líderes'
                             ],
                             datasets: [{
-                                label: 'Elementos complementarios por área',
-                                data: [
-                                    <?= $data["4.2.3"] ?>
-                                ],
-                                backgroundColor: generalColorOp,
-                                borderColor: generalColor,
-                                borderWidth: 1
-                            }]
+                                    label: esecialesText,
+                                    data: [
+                                        <?= $data["4.2.1"] ?>,
+                                        <?= $data["4.2.3"] ?>,
+                                        <?= $data["4.2.4"] ?>,
+                                        0
+                                        
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: complementariosText,
+                                    data: [
+                                        0,
+                                        0,
+                                        0,
+                                        <?= $data["4.2.2"] ?>
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
+                                }
+                            ]
                         },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scale: {
-                                min: 0,
-                                max: 1,
-                                stepSize: 0.5
-                            }
-                        }
+                        options: options
                     });
                 </script>
             </div>
@@ -629,78 +517,51 @@ if (count($rows) > 0) {
                 <h3 class="text-center text-white text-decoration-underline">COMUNICACIÓN Y REDES<h3>
             </div>
             <div class="graph">
-                <canvas id="comunicacion-redes" height="100"></canvas>
+                <canvas id="comunicacion-redes" height=""></canvas>
                 <script>
                     const ctxComunicacionRedes = document.getElementById('comunicacion-redes').getContext('2d');
-                    const chartComunicacionRedes = new Chart(ctxComunicacionRedes, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Encuentros interinstitucionales', 'Estrategia de comunicación'],
-                            datasets: [{
-                                label: 'Elementos esenciales por área',
-                                data: [
-                                    <?= $data["5.3"] ?>,
-                                    <?= $data["5.1"] ?>
-                                ],
-                                backgroundColor: redPjColorOp,
-                                borderColor: redPjColor,
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                            },
-                            scale: {
-                                min: 0,
-                                max: 3,
-                                stepSize: 0.5
-                            }
-                        }
-                    });
-                </script>
-            </div>
-            <div class="graph-small">
-                <canvas id="complementario-comunicacion-redes"></canvas>
-                <script>
-                    const ctxComplementariosComunicacionRedes = document.getElementById('complementario-comunicacion-redes').getContext('2d');
-                    const chartComplementariosComunicacionRedes = new Chart(ctxComplementariosComunicacionRedes, {
+                    const charComunicacionRedes = new Chart(ctxComunicacionRedes, {
                         type: 'bar',
                         data: {
                             labels: [
-                                'Análisis de la realidad local',
-                                'Integración a las familias',
+                                'Estrategias de comunicación',
+                                'Encuentros interinstitucionales',
+                                'Redes sociales',
                                 'Trabajo en red eclesial',
-                                'Redes sociales'
+                                'Integración a las familias',
+                                'Análisis de la realidad local'
                             ],
                             datasets: [{
-                                label: 'Elementos complementarios por área',
-                                data: [
-                                    <?= $data["5.6"] ?>,
-                                    <?= $data["5.5"] ?>,
-                                    <?= $data["5.4"] ?>,
-                                    <?= $data["5.2"] ?>
-                                ],
-                                backgroundColor: generalColorOp,
-                                borderColor: generalColor,
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            indexAxis: 'y',
-                            legend: {
-                                position: 'right',
-                                font: {
-                                    size: 74
+                                    label: esecialesText,
+                                    data: [
+                                        <?= $data["5.1"] ?>,
+                                        <?= $data["5.3"] ?>,
+                                        0,
+                                        0,
+                                        0,
+                                        0                                        
+                                    ],
+                                    backgroundColor: redPjColorOp,
+                                    borderColor: redPjColor,
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: complementariosText,
+                                    data: [
+                                        0,
+                                        0,
+                                        <?= $data["5.2"] ?>,
+                                        <?= $data["5.4"] ?>,
+                                        <?= $data["5.5"] ?>,
+                                        <?= $data["5.6"] ?>
+                                    ],
+                                    backgroundColor: generalColorOp,
+                                    borderColor: generalColor,
+                                    borderWidth: 1
                                 }
-                            },
-                            scale: {
-                                min: 0,
-                                max: 1,
-                                stepSize: 0.5
-                            }
-                        }
+                            ]
+                        },
+                        options: options
                     });
                 </script>
             </div>
@@ -716,7 +577,6 @@ if (count($rows) > 0) {
                     formulario</a>
             </div>
         </div>
-
     </div>
 
 
@@ -736,7 +596,7 @@ if (count($rows) > 0) {
     //put the url in the input
     document.querySelector("#actual-url").value = url;
     //copy the url to the clipboard when the button is clicked
-    document.querySelector("#copy-link").addEventListener("click", function () {
+    document.querySelector("#copy-link").addEventListener("click", function() {
         document.querySelector("#actual-url").select();
         document.execCommand("copy");
     });
@@ -746,7 +606,7 @@ if (count($rows) > 0) {
     var toastTrigger = document.getElementById('copy-link')
     var toastLiveExample = document.getElementById('copy-link-toast')
     if (toastTrigger) {
-        toastTrigger.addEventListener('click', function () {
+        toastTrigger.addEventListener('click', function() {
             var toast = new bootstrap.Toast(toastLiveExample)
 
             toast.show()
