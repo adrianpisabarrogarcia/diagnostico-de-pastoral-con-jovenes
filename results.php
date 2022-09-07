@@ -161,7 +161,7 @@ if (count($rows) > 0) {
             📈 Nota: <span class="fw-bold text-decoration-underline"><?= $totalPerfilGeneral ?></span>/10
         </div>        
         <div class="mt-5 mb-5">
-            <canvas id="equipo-trabajo" width="900" height="500"></canvas>
+            <canvas id="equipo-trabajo" width="900" height="700"></canvas>
             <script>
                 const ctxEquipoTrabajo = document.getElementById('equipo-trabajo').getContext('2d');
                 const chartEquipoTrabajo = new Chart(ctxEquipoTrabajo, {
@@ -196,10 +196,24 @@ if (count($rows) > 0) {
                         scale: {
                             min: 0,
                             max: 10,
-                            stepSize: 1
+                            stepSize: 1,
+                            ticks: {
+                                font: {
+                                    size: 15
+                                }
+                           }
+                        },
+                        scales: {
+                            r: {
+                                pointLabels: {
+                                    font: {
+                                        size: 15
+                                    }
+                                }
+                            }
                         },
                         responsive: true,
-                        maintainAspectRatio: false,
+                        maintainAspectRatio: false
                     }
                 });
             </script>
