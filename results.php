@@ -138,6 +138,28 @@ if (count($rows) > 0) {
             <h3 class="text-center text-white text-decoration-underline">PERFIL GENERAL PROCESOS DE PASTORAL CON JÓVENES
                 <h3>
         </div>
+        <div class="p-2 text-center">
+            <?php
+                $perfilGeneral = [
+                    'equipoTrabajo' => $data["1.1"] + $data["1.2"] + $data["1.3"] + $data["1.4"] + $data["1.5"] + $data["1.6"],
+                    'proyectoEvangelizador' => $data["2.1"] + $data["2.2"] + $data["2.3"] + $data["2.4"] + $data["2.5"] + $data["2.6"] + $data["2.7"] + $data["2.8"],
+                    'procesoIntinerario' => $data["3.1.1"] + $data["3.1.2"] + $data["3.1.3"] + $data["3.1.4"],
+                    'procesoTransvesal' => $data["3.2.1"] + $data["3.2.2"] + $data["3.2.3"] + $data["3.2.4"] + $data["3.2.5"] + $data["3.2.6"], 
+                    'metodologiaAcompanamiento' => $data["4.1.1"] + $data["4.1.2"] + $data["4.1.3"] + $data["4.1.4"],
+                    'metodologiaPersonalizacion' => $data["4.2.1"] + $data["4.2.2"] + $data["4.2.3"] + $data["4.2.4"],
+                    'comunicacionRedes' => $data["5.1"] + $data["5.2"] + $data["5.3"] + $data["5.4"] + $data["5.5"] + $data["5.6"]     
+                ];
+                $totalPerfilGeneral = ( $perfilGeneral['equipoTrabajo'] + 
+                    $perfilGeneral['proyectoEvangelizador'] + 
+                    $perfilGeneral['procesoIntinerario'] + 
+                    $perfilGeneral['procesoTransvesal'] + 
+                    $perfilGeneral['metodologiaAcompanamiento'] + 
+                    $perfilGeneral['metodologiaPersonalizacion'] + 
+                    $perfilGeneral['comunicacionRedes'] ) / 7;
+                $totalPerfilGeneral = number_format($totalPerfilGeneral, 2, ",", ".")
+            ?>
+            📈 Nota: <span class="fw-bold text-decoration-underline"><?= $totalPerfilGeneral ?></span>/10
+        </div>        
         <div class="mt-5 mb-5">
             <canvas id="equipo-trabajo" width="900" height="500"></canvas>
             <script>
@@ -157,13 +179,13 @@ if (count($rows) > 0) {
                         datasets: [{
                             label: 'Perfil general'.toUpperCase(),
                             data: [
-                                <?= $data["1.1"] ?> + <?= $data["1.2"] ?> + <?= $data["1.3"] ?> + <?= $data["1.4"] ?> + <?= $data["1.5"] ?> + <?= $data["1.6"] ?>,
-                                <?= $data["2.1"] ?> + <?= $data["2.2"] ?> + <?= $data["2.3"] ?> + <?= $data["2.4"] ?> + <?= $data["2.5"] ?> + <?= $data["2.6"] ?> + <?= $data["2.7"] ?> + <?= $data["2.8"] ?>,
-                                <?= $data["3.1.1"] ?> + <?= $data["3.1.2"] ?> + <?= $data["3.1.3"] ?> + <?= $data["3.1.4"] ?>,
-                                <?= $data["3.2.1"] ?> + <?= $data["3.2.2"] ?> + <?= $data["3.2.3"] ?> + <?= $data["3.2.4"] ?> + <?= $data["3.2.5"] ?> + <?= $data["3.2.6"] ?>,
-                                <?= $data["4.1.1"] ?> + <?= $data["4.1.2"] ?> + <?= $data["4.1.3"] ?> + <?= $data["4.1.4"] ?>,
-                                <?= $data["4.2.1"] ?> + <?= $data["4.2.2"] ?> + <?= $data["4.2.3"] ?> + <?= $data["4.2.4"] ?>,
-                                <?= $data["5.1"] ?> + <?= $data["5.2"] ?> + <?= $data["5.3"] ?> + <?= $data["5.4"] ?> + <?= $data["5.5"] ?> + <?= $data["5.6"] ?>
+                                <?= $perfilGeneral['equipoTrabajo'] ?>,
+                                <?= $perfilGeneral['proyectoEvangelizador'] ?>,
+                                <?= $perfilGeneral['procesoIntinerario'] ?>,
+                                <?= $perfilGeneral['procesoTransvesal'] ?>, 
+                                <?= $perfilGeneral['metodologiaAcompanamiento'] ?>, 
+                                <?= $perfilGeneral['metodologiaPersonalizacion'] ?>,
+                                <?= $perfilGeneral['comunicacionRedes'] ?>
                             ],
                             backgroundColor: 'rgba(70, 249, 249, 0.2)',
                             borderColor: 'rgba(70, 249, 249, 1)',
@@ -214,6 +236,13 @@ if (count($rows) > 0) {
 
             <div class="m-2 p-2 mt-5 rounded primary-bg-color">
                 <h3 class="text-center text-white text-decoration-underline">EQUIPO DE TRABAJO<h3>
+            </div>
+            <div class="p-2 text-center">
+                <?php
+                    $equipoTrabajo = $data["1.1"] + $data["1.4"] + $data["1.2"] + $data["1.3"] + $data["1.5"] + $data["1.6"];
+                    $equipoTrabajo = number_format($equipoTrabajo, 2, ",", ".")
+                ?>
+                📈 Nota: <span class="fw-bold text-decoration-underline"><?= $equipoTrabajo ?></span>/10
             </div>
             <div class="graph">
                 <canvas id="equipo-de-trabajo" height=""></canvas>
@@ -267,8 +296,15 @@ if (count($rows) > 0) {
             <div class="m-2 p-2 mt-5 rounded primary-bg-color">
                 <h3 class="text-center text-white text-decoration-underline">PROYECTO EVANGELIZADOR<h3>
             </div>
+            <div class="p-2 text-center">
+                <?php
+                    $proyectoEvangelizador = $data["2.1"] + $data["2.2"] + $data["2.3"] + $data["2.4"] + $data["2.5"] + $data["2.6"] + $data["2.7"] + $data["2.8"];
+                    $proyectoEvangelizador = number_format($proyectoEvangelizador, 2, ",", ".")
+                ?>
+                📈 Nota: <span class="fw-bold text-decoration-underline"><?= $proyectoEvangelizador ?></span>/10
+            </div>
             <div class="graph">
-                <canvas id="proyecto-evangelizador" height=""></canvas>
+                <canvas id="proyecto-evangelizador"></canvas>
                 <script>
                     const ctxProyectoEvangelizador = document.getElementById('proyecto-evangelizador').getContext('2d');
                     const charProyectoEvangelizador = new Chart(ctxProyectoEvangelizador, {
@@ -325,6 +361,13 @@ if (count($rows) > 0) {
             <div class="m-2 p-2 mt-5 rounded primary-bg-color">
                 <h3 class="text-center text-white text-decoration-underline">PROCESO - ITINERARIO<h3>
             </div>
+            <div class="p-2 text-center">
+                <?php
+                    $procesoIntinerario = $data["3.1.1"] + $data["3.1.3"] + $data["3.1.4"] + $data["3.1.2"];
+                    $procesoIntinerario = number_format($procesoIntinerario, 2, ",", ".")
+                ?>
+                📈 Nota: <span class="fw-bold text-decoration-underline"><?= $procesoIntinerario ?></span>/10
+            </div>
             <div class="graph">
                 <canvas id="proceso-itinerario" height=""></canvas>
                 <script>
@@ -368,6 +411,13 @@ if (count($rows) > 0) {
             </div>
             <div class="m-2 p-2 mt-5 rounded primary-bg-color">
                 <h3 class="text-center text-white text-decoration-underline">PROCESO - TRANSVERSALES<h3>
+            </div>
+            <div class="p-2 text-center">
+                <?php
+                    $procesoTransversales = $data["3.2.1"] + $data["3.2.6"] + $data["3.2.2"] + $data["3.2.3"] + $data["3.2.4"] + $data["3.2.5"];
+                    $procesoTransversales = number_format($procesoTransversales, 2, ",", ".")
+                ?>
+                📈 Nota: <span class="fw-bold text-decoration-underline"><?= $procesoTransversales ?></span>/10
             </div>
             <div class="graph">
                 <canvas id="proceso-transversales" height=""></canvas>
@@ -422,6 +472,13 @@ if (count($rows) > 0) {
             <div class="m-2 p-2 mt-5 rounded primary-bg-color">
                 <h3 class="text-center text-white text-decoration-underline">METODOLOGÍA - ACOMPAÑAMIENTO<h3>
             </div>
+            <div class="p-2 text-center">
+                <?php
+                    $metodologiaAcompanamiento = $data["4.1.1"] + $data["4.1.3"] + $data["4.1.4"] + $data["4.1.2"];
+                    $metodologiaAcompanamiento = number_format($metodologiaAcompanamiento, 2, ",", ".")
+                ?>
+                📈 Nota: <span class="fw-bold text-decoration-underline"><?= $metodologiaAcompanamiento ?></span>/10
+            </div>
             <div class="graph">
                 <canvas id="proceso-acompanamiento" height=""></canvas>
                 <script>
@@ -469,6 +526,13 @@ if (count($rows) > 0) {
             <div class="m-2 p-2 mt-5 rounded primary-bg-color">
                 <h3 class="text-center text-white text-decoration-underline">METODOLOGÍA - PERSONALIZACIÓN<h3>
             </div>
+            <div class="p-2 text-center">
+                <?php
+                    $metodologiaPersonalizacion = $data["4.2.1"] + $data["4.2.3"] + $data["4.2.4"] + $data["4.2.2"];
+                    $metodologiaPersonalizacion = number_format($metodologiaPersonalizacion, 2, ",", ".")
+                ?>
+                📈 Nota: <span class="fw-bold text-decoration-underline"><?= $metodologiaPersonalizacion ?></span>/10
+            </div>
             <div class="graph">
                 <canvas id="proceso-personalizacion" height=""></canvas>
                 <script>
@@ -515,6 +579,13 @@ if (count($rows) > 0) {
             </div>
             <div class="m-2 p-2 mt-5 rounded primary-bg-color">
                 <h3 class="text-center text-white text-decoration-underline">COMUNICACIÓN Y REDES<h3>
+            </div>
+            <div class="p-2 text-center">
+                <?php
+                    $comunicacionRedes = $data["5.1"] + $data["5.3"] + $data["5.2"] + $data["5.4"] + $data["5.5"] + $data["5.6"];
+                    $comunicacionRedes = number_format($comunicacionRedes, 2, ",", ".")
+                ?>
+                📈 Nota: <span class="fw-bold text-decoration-underline"><?= $comunicacionRedes ?></span>/10
             </div>
             <div class="graph">
                 <canvas id="comunicacion-redes" height=""></canvas>
