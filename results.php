@@ -227,24 +227,22 @@ if (count($rows) > 0) {
                 const redPjColor = 'rgba(150, 201, 3, 1)'
                 const generalColorOp = 'rgba(147, 39, 143, 0.2)'
                 const generalColor = 'rgba(147, 39, 143, 1)'
-                const esecialesText = 'Esenciales'
-                const complementariosText = 'Complementarios'
+                const esecialesText = 'Esenciales (sobre 3)'
+                const complementariosText = 'Complementarios (sobre 1)'
                 const options = {
                     indexAxis: 'y',
                     legend: {
                         position: 'right',
                     },
-                    scale: [{
-                            min: 0,
-                            max: 3,
-                            stepSize: 0.5
-                        },
-                        {
+                    scales: {
+                        x: {
                             min: 0,
                             max: 3,
                             stepSize: 0.5
                         }
-                    ]
+                    }
+                        
+                    
                 }
             </script>
 
@@ -331,7 +329,7 @@ if (count($rows) > 0) {
                                 'Plan de mejora',
                                 'Presupuesto',
                                 'Principios',
-                                'Proceso de selección',
+                                'Perfil animadores  ',
                                 'Estructura pastoral'
                             ],
                             datasets: [{
@@ -392,7 +390,8 @@ if (count($rows) > 0) {
                             labels: [
                                 'Itinerario Pastoral con Jóvenes',
                                 'Comunidad cristiana',
-                                'Discernimiento vocacional'
+                                'Discernimiento vocacional',
+                                'Vocación'
                             ],
                             datasets: [{
                                     label: esecialesText,
@@ -400,6 +399,7 @@ if (count($rows) > 0) {
                                         <?= $data["3.1.1"] ?>,
                                         <?= $data["3.1.3"] ?>,
                                         <?= $data["3.1.4"] ?>,
+                                        0
                                         
                                     ],
                                     backgroundColor: redPjColorOp,
@@ -409,6 +409,7 @@ if (count($rows) > 0) {
                                 {
                                     label: complementariosText,
                                     data: [
+                                        0,
                                         0,
                                         0,
                                         <?= $data["3.1.2"] ?>
