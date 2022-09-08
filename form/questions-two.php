@@ -29,7 +29,7 @@ $questions2 = [
         ]
     ],
     '4' => [
-        'question' => 'Hay un <u>plan de mejora</u> en que se introducen cambios, mejoras, innovaciones con respecto a las evaluaciones anuales. ',
+        'question' => 'Hay un <u>plan de mejora</u> en el que se introducen cambios, mejoras, innovaciones con respecto a evaluaciones anuales.',
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",

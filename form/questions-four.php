@@ -69,7 +69,7 @@ $questions4Two = [
         ]
     ],
     '4' => [
-        'question' => 'Hay momentos preparados de <u>discernimiento</u> (cambios de etapa, encomiendas, propuestas vocacionales…).',
+        'question' => 'Hay momentos/actividades preparados/as para trabajar el <u>discernimiento</u> (cambios de etapa, encomiendas, propuestas vocacionales, …)',
         'answers' => [
             "si" => "3",
             "bastante" => "1.75",
