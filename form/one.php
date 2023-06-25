@@ -1,4 +1,5 @@
-<?php require_once "../nav/header.php"; ?>
+<?php global $i18n, $lang;
+require_once "../nav/header.php"; ?>
 <?php require_once "../form/questions-one.php"; ?>
 <?php
 
@@ -44,8 +45,8 @@
 <div class="row justify-content-center align-items-center">
     <div class="mt-5 mb-5 p-3 p-md-5 m-5 col-11 rounded" id="scuare">
 
-        <p class="text-center">Preguntas sobre: </p>
-        <h3 class="text-center ">EL EQUIPO DE TRABAJO</h3>
+        <p class="text-center"><?= $i18n[$lang]['preguntasSobre'] ?></p>
+        <h3 class="text-center "><?= $i18n[$lang]['tituloPrimeraPregunta'] ?></h3>
         <hr class="m-4">
         <form action="one" method="post">
             <ol>
@@ -55,7 +56,7 @@
                     <div class="form-row m-4">
                         <li>
                             <p class="m-2 fw-bold">
-                                <?= $questions1[$i]['question'] ?>
+                                <?= $questions1[$i]['question']['es'] ?>
                             </p>
                             <div class="d-md-flex">
                                 <div class="form-check m-2">

@@ -164,3 +164,20 @@ input {
         padding-right: 30%;
     }
 }
+
+/* language selector */
+#languages{
+    position: fixed;
+    background-color: white;
+    width: auto;
+}
+
+.enlaces{
+    color: var(--third-color);
+    text-decoration: none;
+}
+
+.enlaces:hover{
+    color: var(--second-color);
+    text-decoration: underline;
+}

@@ -1,5 +1,6 @@
 <?php
 // Session
+global $i18n, $lang;
 session_start();
 
 //modo debug
@@ -18,8 +19,7 @@ define("BASEURL", "/DiagnosticoPastoralConJovenesForm");
 
 // Includes
 require_once BASEDIR . "/conexionBBDD.php";
-
-
+require_once BASEDIR . "/i18n.php";
 
 
 ?>
@@ -35,10 +35,10 @@ require_once BASEDIR . "/conexionBBDD.php";
     <meta name="description"
           content="¿Tienes curiosidad por ver que fortalezas y debilidades tiene tu pastoral? Esta es la mejor evaluación,
           que te mostrará en que áreas y competencias debes mejorar o de lo contrario celebrar.">
-    <meta name=”keywords” content= “Diagnostico”>
-    <meta name=”keywords” content= “Pastoral”>
-    <meta name=”keywords” content= “Jóvenes”>
-    <meta name=”keywords” content= “Evaluación”>
+    <meta name=”keywords” content=“Diagnostico”>
+    <meta name=”keywords” content=“Pastoral”>
+    <meta name=”keywords” content=“Jóvenes”>
+    <meta name=”keywords” content=“Evaluación”>
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo BASEURL; ?>/assets/img/favicon.jpg" type="image/x-icon">
     <!-- Jquery -->
@@ -59,11 +59,32 @@ require_once BASEDIR . "/conexionBBDD.php";
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"
             integrity="sha256-7lWo7cjrrponRJcS6bc8isfsPDwSKoaYfGIHgSheQkk=" crossorigin="anonymous"></script>
+    <!-- html2pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+            integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfkit/0.12.2/pdfkit.min.js"></script>
+
+
+
     <!-- Styles -->
     <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/style.css">
 
-    <title>Herramienta de diagnóstico pastoral con jóvenes</title>
+    <title><?= $i18n[$lang]['titulo'] ?></title>
 </head>
 
+    <div id="languages" class="p-2 m-3 rounded float-start">
+        <div>
+            <span>🇪🇸&nbsp; <a class="enlaces" href="?lang=es"><?= $i18n[$lang]['castellano'] ?></a></span>
+        </div>
+        <div>
+            <span>🇺🇸&nbsp; <a class="enlaces" href="?lang=en"><?= $i18n[$lang]['ingles'] ?></a></span>
+        </div>
+    </div>
+<script>
+    $.getScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js');
+</script>
 <body>
 <div class="container-fluid">
