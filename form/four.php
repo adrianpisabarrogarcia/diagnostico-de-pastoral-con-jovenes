@@ -1,4 +1,5 @@
-<?php require_once "../nav/header.php"; ?>
+<?php global $i18n, $lang, $questions4One, $questions4Two;
+require_once "../nav/header.php"; ?>
 <?php require_once "../form/questions-four.php"; ?>
 <?php
 
@@ -51,10 +52,10 @@
 
         <form action="four" method="post">
             <!-- First form -->
-            <p class="text-center">Preguntas sobre: </p>
-            <h3 class="text-center ">METODOLOGÍA</h3>
-            <p class="text-center fst-italic">Más concretamente sobre el:</p>
-            <h4 class="text-center ">ACOMPAÑAMIENTO</h4>
+            <p class="text-center"><?= $i18n[$lang]['preguntasSobre'] ?></p>
+            <h3 class="text-center "><?= $i18n[$lang]['tituloCuartaPregunta'] ?></h3>
+            <p class="text-center fst-italic"><?= $i18n[$lang]['preguntasConcretamente'] ?></p>
+            <h4 class="text-center "><?= $i18n[$lang]['tituloCuartaPreguntaUno'] ?></h4>
             <hr class="m-4">
             <ol>
                 <?php
@@ -63,35 +64,35 @@
                     <div class="form-row m-4">
                         <li>
                             <p class="m-2 fw-bold">
-                                <?= $questions4One[$i]['question'] ?>
+                                <?= $questions4One[$i]['question'][$lang] ?>
                             </p>
                             <div class="d-md-flex">
                                 <div class="form-check m-2">
                                     <input class="form-check-input" type="radio" name="4.1.<?= $i ?>" id="1.<?= $i ?>.4"
                                            value="<?= $questions4One[$i]['answers']['no'] ?>" checked>
                                     <label class="form-check-label respuesta" for="1.<?= $i ?>.4">
-                                        No/Nunca
+                                        <?= $i18n[$lang]['noNunca'] ?>
                                     </label>
                                 </div>
                                 <div class="form-check m-2">
                                     <input class="form-check-input" type="radio" name="4.1.<?= $i ?>" id="1.<?= $i ?>.3"
                                            value="<?= $questions4One[$i]['answers']['poco'] ?>">
                                     <label class="form-check-label respuesta" for="1.<?= $i ?>.3">
-                                        Poco/A veces
+                                        <?= $i18n[$lang]['pocoAVeces'] ?>
                                     </label>
                                 </div>
                                 <div class="form-check m-2">
                                     <input class="form-check-input" type="radio" name="4.1.<?= $i ?>" id="1.<?= $i ?>.2"
                                            value="<?= $questions4One[$i]['answers']['bastante'] ?>">
                                     <label class="form-check-label respuesta" for="1.<?= $i ?>.2">
-                                        Bastante/Casi siempre
+                                        <?= $i18n[$lang]['bastanteCasiSiempre'] ?>
                                     </label>
                                 </div>
                                 <div class="form-check m-2">
                                     <input class="form-check-input" type="radio" name="4.1.<?= $i ?>" id="1.<?= $i ?>.1"
                                            value="<?= $questions4One[$i]['answers']['si'] ?>">
                                     <label class="form-check-label respuesta" for="1.<?= $i ?>.1">
-                                        Sí/Siempre
+                                        <?= $i18n[$lang]['siSiempre'] ?>
                                     </label>
                                 </div>
                             </div>
@@ -102,8 +103,8 @@
 
             <hr class="m-4">
             <!-- Second form -->
-            <p class="text-center fst-italic">Más concretamente sobre la:</p>
-            <h4 class="text-center ">PERSONALIZACIÓN</h4>
+            <p class="text-center fst-italic"><?= $i18n[$lang]['preguntasConcretamente'] ?></p>
+            <h4 class="text-center "><?= $i18n[$lang]['tituloCuartaPreguntaDos'] ?></h4>
             <hr class="m-4">
             <ol>
                 <?php
@@ -112,35 +113,35 @@
                     <div class="form-row m-4">
                         <li>
                             <p class="m-2 fw-bold">
-                                <?= $questions4Two[$i]['question'] ?>
+                                <?= $questions4Two[$i]['question'][$lang] ?>
                             </p>
                             <div class="d-md-flex">
                                 <div class="form-check m-2">
                                     <input class="form-check-input" type="radio" name="4.2.<?= $i ?>" id="2.<?= $i ?>.4"
                                            value="<?= $questions4Two[$i]['answers']['no'] ?>" checked>
                                     <label class="form-check-label respuesta" for="2.<?= $i ?>.4">
-                                        No/Nunca
+                                        <?= $i18n[$lang]['noNunca'] ?>
                                     </label>
                                 </div>
                                 <div class="form-check m-2">
                                     <input class="form-check-input" type="radio" name="4.2.<?= $i ?>" id="2.<?= $i ?>.3"
                                            value="<?= $questions4Two[$i]['answers']['poco'] ?>">
                                     <label class="form-check-label respuesta" for="2.<?= $i ?>.3">
-                                        Poco/A veces
+                                        <?= $i18n[$lang]['pocoAVeces'] ?>
                                     </label>
                                 </div>
                                 <div class="form-check m-2">
                                     <input class="form-check-input" type="radio" name="4.2.<?= $i ?>" id="2.<?= $i ?>.2"
                                            value="<?= $questions4Two[$i]['answers']['bastante'] ?>">
                                     <label class="form-check-label respuesta" for="2.<?= $i ?>.2">
-                                        Bastante/Casi siempre
+                                        <?= $i18n[$lang]['bastanteCasiSiempre'] ?>
                                     </label>
                                 </div>
                                 <div class="form-check m-2">
                                     <input class="form-check-input" type="radio" name="4.2.<?= $i ?>" id="2.<?= $i ?>.1"
                                            value="<?= $questions4Two[$i]['answers']['si'] ?>">
                                     <label class="form-check-label respuesta" for="2.<?= $i ?>.1">
-                                        Sí/Siempre
+                                        <?= $i18n[$lang]['siSiempre'] ?>
                                     </label>
                                 </div>
                             </div>
@@ -156,14 +157,14 @@
 
             <!-- botón de siguiente -->
             <div class="m-5 text-center">
-                <input type="submit" name="submit" class="btn btn-primary text-center w-100" value="Siguiente 4/5 ➡️">
+                <input type="submit" name="submit" class="btn btn-primary text-center w-100" value="<?= $i18n[$lang]['siguiente'] ?> 4/5 ➡️">
             </div>
 
 
             <!-- barra de progreso -->
             <hr class="m-4">
             <div class="me-5 ms-5">
-                <span>Progreso del cuestionario:</span>
+                <span><?= $i18n[$lang]['progresoCuestionario'] ?></span>
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
                          aria-valuemin="0" aria-valuemax="100">80%

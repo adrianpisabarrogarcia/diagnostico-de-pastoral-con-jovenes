@@ -1,4 +1,5 @@
-<?php require_once "../nav/header.php"; ?>
+<?php global $i18n, $lang, $questions5;
+require_once "../nav/header.php"; ?>
 <?php require_once "../form/questions-five.php"; ?>
 <?php
 
@@ -43,8 +44,8 @@ if (isset($_POST['submit'])) {
     <div class="row justify-content-center align-items-center">
         <div class="mt-5 mb-5 p-3 p-md-5 m-5 col-11 rounded" id="scuare">
 
-            <p class="text-center">Preguntas sobre: </p>
-            <h3 class="text-center ">COMUNICACIÓN Y REDES</h3>
+            <p class="text-center"><?= $i18n[$lang]['preguntasSobre'] ?></p>
+            <h3 class="text-center "><?= $i18n[$lang]['tituloQuinta'] ?></h3>
             <hr class="m-4">
             <form action="five" method="post">
                 <ol>
@@ -54,35 +55,35 @@ if (isset($_POST['submit'])) {
                         <div class="form-row m-4">
                             <li>
                                 <p class="m-2 fw-bold">
-                                    <?= $questions5[$i]['question'] ?>
+                                    <?= $questions5[$i]['question'][$lang] ?>
                                 </p>
                                 <div class="d-md-flex">
                                     <div class="form-check m-2">
                                         <input class="form-check-input" type="radio" name="5.<?= $i ?>" id="<?= $i ?>.4"
                                                value="<?= $questions5[$i]['answers']['no'] ?>" checked>
                                         <label class="form-check-label respuesta" for="<?= $i ?>.4">
-                                            No/Nunca
+                                            <?= $i18n[$lang]['noNunca'] ?>
                                         </label>
                                     </div>
                                     <div class="form-check m-2">
                                         <input class="form-check-input" type="radio" name="5.<?= $i ?>" id="<?= $i ?>.3"
                                                value="<?= $questions5[$i]['answers']['poco'] ?>">
                                         <label class="form-check-label respuesta" for="<?= $i ?>.3">
-                                            Poco/A veces
+                                            <?= $i18n[$lang]['pocoAVeces'] ?>
                                         </label>
                                     </div>
                                     <div class="form-check m-2">
                                         <input class="form-check-input" type="radio" name="5.<?= $i ?>" id="<?= $i ?>.2"
                                                value="<?= $questions5[$i]['answers']['bastante'] ?>">
                                         <label class="form-check-label respuesta" for="<?= $i ?>.2">
-                                            Bastante/Casi siempre
+                                            <?= $i18n[$lang]['bastanteCasiSiempre'] ?>
                                         </label>
                                     </div>
                                     <div class="form-check m-2">
                                         <input class="form-check-input" type="radio" name="5.<?= $i ?>" id="<?= $i ?>.1"
                                                value="<?= $questions5[$i]['answers']['si'] ?>">
                                         <label class="form-check-label respuesta" for="<?= $i ?>.1">
-                                            Sí/Siempre
+                                            <?= $i18n[$lang]['siSiempre'] ?>
                                         </label>
                                     </div>
                                 </div>
@@ -94,14 +95,14 @@ if (isset($_POST['submit'])) {
                 <!-- botón de siguiente -->
                 <div class="m-5 text-center">
                     <input type="submit" name="submit" class="btn btn-primary text-center w-100"
-                           value="Ver resulados ➡️">
+                           value="<?= $i18n[$lang]['verResultados'] ?>">
                 </div>
 
 
                 <!-- barra de progreso -->
                 <hr class="m-4">
                 <div class="me-5 ms-5">
-                    <span>Progreso del cuestionario:</span>
+                    <span><?= $i18n[$lang]['progresoCuestionario'] ?></span>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100"
                              aria-valuemin="0" aria-valuemax="100">100%
