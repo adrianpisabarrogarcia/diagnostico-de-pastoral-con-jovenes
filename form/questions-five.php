@@ -2,7 +2,10 @@
 
 $questions5 = [
     '1' => [
-        'question' => 'Hay una <u>estrategia de comunicación</u> para informar del proyecto y para convocar e implicar a más personas.',
+        'question' => [
+            'es' => 'Hay una <u>estrategia de comunicación</u> para informar del proyecto y para convocar e implicar a más personas.',
+            'en' => 'There is a <u>communication strategy</u> to inform about the project and to convene and involve more people.',
+        ],
         'answers' => [
             "si" => "3",
             "bastante" => "1.75",
@@ -11,7 +14,10 @@ $questions5 = [
         ]
     ],
     '2' => [
-        'question' => 'Hay un <u>canal de comunicación</u> y participación en <u>redes sociales</u>.',
+        'question' => [
+            'es' => 'Hay un <u>canal de comunicación</u> y participación en <u>redes sociales</u>.',
+            'en' => 'There is a <u>communication channel</u> and participation in <u>social networks</u>.',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",
@@ -20,7 +26,10 @@ $questions5 = [
         ]
     ],
     '3' => [
-        'question' => 'Se llevan a cabo <u>encuentros y colaboraciones con otras instituciones</u>, grupos, colegio, asociaciones...',
+        'question' => [
+            'es' => 'Se llevan a cabo <u>encuentros y colaboraciones con otras instituciones</u>, grupos, colegio, asociaciones...',
+            'en' => 'There are <u>meetings and collaborations with other institutions</u>, groups, schools, associations ...',
+        ],
         'answers' => [
             "si" => "3",
             "bastante" => "1.75",
@@ -29,7 +38,10 @@ $questions5 = [
         ]
     ],
     '4' => [
-        'question' => 'Se participa en los equipos de coordinación/reflexión de otras <u>redes eclesiales</u> de “pastoral con jóvenes”.',
+        'question' => [
+            'es' => 'Se participa en los equipos de coordinación/reflexión de otras <u>redes eclesiales</u> de “pastoral con jóvenes”.',
+            'en' => 'Participation in the coordination / reflection teams of other <u>ecclesial networks</u> of "pastoral with young people".',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",
@@ -38,7 +50,10 @@ $questions5 = [
         ]
     ],
     '5' => [
-        'question' => 'Hay algún canal de comunicación/participación para integrar a las <u>familias</u> en el proyecto.',
+        'question' => [
+            'es' => 'Hay algún canal de comunicación/participación para integrar a las <u>familias</u> en el proyecto.',
+            'en' => 'There is a communication / participation channel to integrate <u>families</u> into the project.',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",
@@ -47,7 +62,10 @@ $questions5 = [
         ]
     ],
     '6' => [
-        'question' => 'Hay un análisis de la <u>realidad local</u> en el que se valoran necesidades dentro de la zona para poder aportar como comunidad a nivel social.',
+        'question' => [
+            'es' => 'Hay un análisis de la <u>realidad local</u> en el que se valoran necesidades dentro de la zona para poder aportar como comunidad a nivel social.',
+            'en' => 'There is an analysis of the <u>local reality</u> in which needs are assessed within the area to be able to contribute as a community at the social level.',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",

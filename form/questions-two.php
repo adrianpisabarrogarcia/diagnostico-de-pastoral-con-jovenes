@@ -2,7 +2,10 @@
 
 $questions2 = [
     '1' => [
-        'question' => 'Hay un <u>proyecto</u> de pastoral con jóvenes escrito con objetivos definidos y líneas de acción para su consecución, con responsables y tiempos establecidos.',
+        'question' => [
+            'es' => 'Hay un <u>proyecto</u> de pastoral con jóvenes escrito con objetivos definidos y líneas de acción para su consecución, con responsables y tiempos establecidos.',
+            'en' => 'There is a written <u>pastoral project</u> with defined objectives and lines of action for its achievement, with established responsibilities and times.',
+        ],
         'answers' => [
             "si" => "3",
             "bastante" => "1.75",
@@ -11,7 +14,10 @@ $questions2 = [
         ]
     ],
     '2' => [
-        'question' => 'Hay una <u>programación anual</u> con su correspondiente calendario.',
+        'question' => [
+            'es' => 'Hay una <u>programación anual</u> con su correspondiente calendario.',
+            'en' => 'There is an <u>annual programming</u> with its corresponding calendar.',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",
@@ -20,7 +26,10 @@ $questions2 = [
         ]
     ],
     '3' => [
-        'question' => 'Hay una <u>evaluación periódica</u> del proyecto/programación.',
+        'question' => [
+            'es' => 'Hay una <u>evaluación periódica</u> del proyecto/programación.',
+            'en' => 'There is a <u>periodic evaluation</u> of the project / programming.',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",
@@ -29,7 +38,10 @@ $questions2 = [
         ]
     ],
     '4' => [
-        'question' => 'Hay un <u>plan de mejora</u> en el que se introducen cambios, mejoras, innovaciones con respecto a evaluaciones anuales.',
+        'question' => [
+            'es' => 'Hay un <u>plan de mejora</u> en el que se introducen cambios, mejoras, innovaciones con respecto a evaluaciones anuales.',
+            'en' => 'There is an <u>improvement plan</u> in which changes, improvements, innovations are introduced with respect to annual evaluations.',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",
@@ -38,7 +50,10 @@ $questions2 = [
         ]
     ],
     '5' => [
-        'question' => 'Hay un <u>presupuesto</u> para llevar a cabo el proyecto.',
+        'question' => [
+            'es' => 'Hay un <u>presupuesto</u> para llevar a cabo el proyecto.',
+            'en' => 'There is a <u>budget</u> to carry out the project.',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",
@@ -47,7 +62,10 @@ $questions2 = [
         ]
     ],
     '6' => [
-        'question' => 'Hay una priorización de los <u>principios</u> o ejes que fundamentan el proyecto.',
+        'question' => [
+            'es' => 'Hay una priorización de los <u>principios</u> o ejes que fundamentan el proyecto.',
+            'en' => 'There is a prioritization of the <u>principles</u> or axes that underlie the project.',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",
@@ -56,7 +74,10 @@ $questions2 = [
         ]
     ],
     '7' => [
-        'question' => 'Hay algún <u>perfil/criterios</u> para la selección de los responsables, delegados, coordinadores…',
+        'question' => [
+            'es' => 'Hay algún <u>perfil/criterios</u> para la selección de los responsables, delegados, coordinadores…',
+            'en' => 'There is some <u>profile / criteria</u> for the selection of those responsible, delegates, coordinators...',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",
@@ -65,7 +86,10 @@ $questions2 = [
         ]
     ],
     '8' => [
-        'question' => 'Hay definida una <u>estructura</u> pastoral (provincial, diocesana, local...) (Equipos provinciales de pastoral, Equipos locales, coordinaciones, órganos representativos…).',
+        'question' => [
+            'es' => 'Hay definida una <u>estructura</u> pastoral (provincial, diocesana, local...) (Equipos provinciales de pastoral, Equipos locales, coordinaciones, órganos representativos…).',
+            'en' => 'There is a defined <u>pastoral structure</u> (provincial, diocesan, local...) (Provincial pastoral teams, local teams, coordinations, representative bodies...).',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",

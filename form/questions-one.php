@@ -50,7 +50,10 @@ $questions1 = [
         ]
     ],
     '5' => [
-        'question' => 'Los responsables del proyecto cuentan con los <u>recursos</u> necesarios para llevarlo a cabo (tiempo, personas, financiación, material, apoyo institucional…).',
+        'question' => [
+            'es' => 'Los responsables del proyecto cuentan con los <u>recursos</u> necesarios para llevarlo a cabo (tiempo, personas, financiación, material, apoyo institucional…).',
+            'en' => 'The project managers have the <u>resources</u> necessary to carry it out (time, people, financing, material, institutional support ...).',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",
@@ -59,7 +62,10 @@ $questions1 = [
         ]
     ],
     '6' => [
-        'question' => 'Hay <u>comunicación</u> frecuente entre el Equipo de pastoral y los máximos responsables de la Institución.',
+        'question' => [
+            'es' => 'Hay <u>comunicación</u> frecuente entre el Equipo de pastoral y los máximos responsables de la Institución.',
+            'en' => 'There is <u>regular</u> communication between the Pastoral Team and the highest authorities of the Institution.',
+        ],
         'answers' => [
             "si" => "1",
             "bastante" => "0.5",
