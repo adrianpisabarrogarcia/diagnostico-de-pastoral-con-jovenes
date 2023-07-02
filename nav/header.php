@@ -3,11 +3,11 @@
 global $i18n, $lang;
 session_start();
 
-//modo debug
-//ini_set('display_errors', 1);
-//error_reporting(E_ALL|E_STRICT);
-//header("Cache-Control: no-cache");
-//mb_internal_encoding("UTF-8");
+//Modo debug
+ini_set('display_errors', 1);
+error_reporting(E_ALL | E_STRICT);
+header("Cache-Control: no-cache");
+mb_internal_encoding("UTF-8");
 
 
 // Constants
@@ -67,7 +67,7 @@ require_once BASEDIR . "/i18n.php";
 
     <div id="languages" class="p-2 m-3 rounded float-start">
         <div>
-            <?
+            <?php
             $urlEs = '?lang=es';
             $urlEn = '?lang=en';
             if (isset($_GET['id'])) {
@@ -75,10 +75,10 @@ require_once BASEDIR . "/i18n.php";
                 $urlEn .= '&id=' . $_GET['id'];
             }
             ?>
-            <span>🇪🇸&nbsp; <a class="enlaces" href="<?= $urlEs ?>"><?= $i18n[$lang]['castellano'] ?></a></span>
+            <span class="d-flex align-items-center"><img src="<?= BASEURL ?>/assets/img/es.png" width="17">&nbsp;<a class="enlaces" href="<?= $urlEs ?>"><?= $i18n[$lang]['castellano'] ?></a></span>
         </div>
         <div>
-            <span>🇺🇸&nbsp; <a class="enlaces" href="<?= $urlEn ?>"><?= $i18n[$lang]['ingles'] ?></a></span>
+            <span class="d-flex align-items-center"><img src="<?= BASEURL ?>/assets/img/en.png" width="17">&nbsp;<a class="enlaces" href="<?= $urlEn ?>"><?= $i18n[$lang]['ingles'] ?></a></span>
         </div>
     </div>
 <body>
