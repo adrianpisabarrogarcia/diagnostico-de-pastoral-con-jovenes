@@ -59,16 +59,6 @@ require_once BASEDIR . "/i18n.php";
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"
             integrity="sha256-7lWo7cjrrponRJcS6bc8isfsPDwSKoaYfGIHgSheQkk=" crossorigin="anonymous"></script>
-    <!-- html2pdf -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-            integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfkit/0.12.2/pdfkit.min.js"></script>
-
-
-
     <!-- Styles -->
     <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/styles.css">
 
@@ -91,8 +81,5 @@ require_once BASEDIR . "/i18n.php";
             <span>🇺🇸&nbsp; <a class="enlaces" href="<?= $urlEn ?>"><?= $i18n[$lang]['ingles'] ?></a></span>
         </div>
     </div>
-<script>
-    $.getScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js');
-</script>
 <body>
 <div class="container-fluid">
