@@ -65,8 +65,8 @@ function comprobarTokenUnico($token)
 }
 
 ?>
-    <div class="row justify-content-center align-items-center minh-100">
-        <div class="p-3 p-md-5 col-10 col-md-5 rounded" id="scuare">
+    <div class="row justify-content-center align-items-center">
+        <div class="mt-3 mb-3 p-3 p-md-5 col-10 col-md-5 rounded" id="scuare">
             <div class="d-flex justify-content-center m-2">
                 <img style="width: 30%" src="<?php echo BASEURL; ?>/assets/img/logo.jpg">
             </div>
