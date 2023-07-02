@@ -70,17 +70,25 @@ require_once BASEDIR . "/i18n.php";
 
 
     <!-- Styles -->
-    <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/styles.css">
 
     <title><?= $i18n[$lang]['titulo'] ?></title>
 </head>
 
     <div id="languages" class="p-2 m-3 rounded float-start">
         <div>
-            <span>🇪🇸&nbsp; <a class="enlaces" href="?lang=es"><?= $i18n[$lang]['castellano'] ?></a></span>
+            <?
+            $urlEs = '?lang=es';
+            $urlEn = '?lang=en';
+            if (isset($_GET['id'])) {
+                $urlEs .= '&id=' . $_GET['id'];
+                $urlEn .= '&id=' . $_GET['id'];
+            }
+            ?>
+            <span>🇪🇸&nbsp; <a class="enlaces" href="<?= $urlEs ?>"><?= $i18n[$lang]['castellano'] ?></a></span>
         </div>
         <div>
-            <span>🇺🇸&nbsp; <a class="enlaces" href="?lang=en"><?= $i18n[$lang]['ingles'] ?></a></span>
+            <span>🇺🇸&nbsp; <a class="enlaces" href="<?= $urlEn ?>"><?= $i18n[$lang]['ingles'] ?></a></span>
         </div>
     </div>
 <script>
