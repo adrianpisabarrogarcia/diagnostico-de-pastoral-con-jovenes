@@ -7,8 +7,8 @@ if(isset($_SESSION['language'])){
     $lang = $_SESSION['language'];
 }
 session_destroy();
-session_start();
-$_SESSION['language'] = $lang;
+//session_start();
+//$_SESSION['language'] = $lang;
 
 
 if (!isset($_GET['id'])) {
@@ -26,8 +26,8 @@ $conn = conectarBD();
 $esUnico = true;
 $stmt = $conn->prepare($sql);
 $stmt->execute();
-desconectarBD($conn);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+desconectarBD($conn);
 $data = [];
 if (count($rows) > 0) {
     foreach ($rows as $row) {
@@ -77,8 +77,8 @@ if (count($rows) > 0) {
         ];
     }
 } else {
-    echo "<script> location.replace('" . BASEURL . "/'); </script>";
-    exit();
+    //echo "<script> location.replace('" . BASEURL . "/'); </script>";
+    //exit();
 }
 
 ?>
@@ -172,16 +172,16 @@ if (count($rows) > 0) {
                         type: 'radar',
                         data: {
                             labels: [
-                                '<?= $i18n[$lang]['equipoTrabajo'] ?>',
-                                '<?= $i18n[$lang]['proyectoEvangelizador'] ?>',
-                                '<?= $i18n[$lang]['procesoItinerario'] ?>',
-                                '<?= $i18n[$lang]['procesosTransversales'] ?>',
-                                '<?= $i18n[$lang]['metodologiaAcompanamiento'] ?>',
-                                '<?= $i18n[$lang]['metodologiaPersonalizacion'] ?>',
-                                '<?= $i18n[$lang]['comunicacionRedes'] ?>'
+                                "<?= $i18n[$lang]['equipoTrabajo'] ?>",
+                                "<?= $i18n[$lang]['proyectoEvangelizador'] ?>",
+                                "<?= $i18n[$lang]['procesoItinerario'] ?>",
+                                "<?= $i18n[$lang]['procesosTransversales'] ?>",
+                                "<?= $i18n[$lang]['metodologiaAcompanamiento'] ?>",
+                                "<?= $i18n[$lang]['metodologiaPersonalizacion'] ?>",
+                                "<?= $i18n[$lang]['comunicacionRedes'] ?>"
                             ],
                             datasets: [{
-                                label: '<?= $i18n[$lang]['perfilGeneral'] ?>',
+                                label: "<?= $i18n[$lang]['perfilGeneral'] ?>",
                                 data: [
                                     <?= $perfilGeneral['equipoTrabajo'] ?>,
                                     <?= $perfilGeneral['proyectoEvangelizador'] ?>,
@@ -229,8 +229,8 @@ if (count($rows) > 0) {
                 const redPjColor = 'rgba(150, 201, 3, 1)'
                 const generalColorOp = 'rgba(147, 39, 143, 0.2)'
                 const generalColor = 'rgba(147, 39, 143, 1)'
-                const esecialesText = '<?= $i18n[$lang]['esenciales'] ?>'
-                const complementariosText = '<?= $i18n[$lang]['complementarios'] ?>'
+                const esecialesText = "<?= $i18n[$lang]['esenciales'] ?>"
+                const complementariosText = "<?= $i18n[$lang]['complementarios'] ?>"
                 const options = {
                     indexAxis: 'y',
                     legend: {
@@ -265,12 +265,12 @@ if (count($rows) > 0) {
                         type: 'bar',
                         data: {
                             labels: [
-                                '<?= $i18n[$lang]['equipoPastoralConJovenes'] ?>',
-                                '<?= $i18n[$lang]['responsable'] ?>',
-                                '<?= $i18n[$lang]['formacion'] ?>',
-                                '<?= $i18n[$lang]['estabilidad'] ?>',
-                                '<?= $i18n[$lang]['recursos'] ?>',
-                                '<?= $i18n[$lang]['comunicacion'] ?>'
+                                "<?= $i18n[$lang]['equipoPastoralConJovenes'] ?>",
+                                "<?= $i18n[$lang]['responsable'] ?>",
+                                "<?= $i18n[$lang]['formacion'] ?>",
+                                "<?= $i18n[$lang]['estabilidad'] ?>",
+                                "<?= $i18n[$lang]['recursos'] ?>",
+                                "<?= $i18n[$lang]['comunicacion'] ?>"
                             ],
                             datasets: [{
                                 label: esecialesText,
@@ -324,14 +324,14 @@ if (count($rows) > 0) {
                         type: 'bar',
                         data: {
                             'labels': [
-                                '<?= $i18n[$lang]['proyecto'] ?>',
-                                '<?= $i18n[$lang]['programacionAnual'] ?>',
-                                '<?= $i18n[$lang]['evaluacionPeriodica'] ?>',
-                                '<?= $i18n[$lang]['planMejora'] ?>',
-                                '<?= $i18n[$lang]['presupuesto'] ?>',
-                                '<?= $i18n[$lang]['principios'] ?>',
-                                '<?= $i18n[$lang]['perfilAnimadores'] ?>',
-                                '<?= $i18n[$lang]['estructuraPastoral'] ?>'
+                                "<?= $i18n[$lang]['proyecto'] ?>",
+                                "<?= $i18n[$lang]['programacionAnual'] ?>",
+                                "<?= $i18n[$lang]['evaluacionPeriodica'] ?>",
+                                "<?= $i18n[$lang]['planMejora'] ?>",
+                                "<?= $i18n[$lang]['presupuesto'] ?>",
+                                "<?= $i18n[$lang]['principios'] ?>",
+                                "<?= $i18n[$lang]['perfilAnimadores'] ?>",
+                                "<?= $i18n[$lang]['estructuraPastoral'] ?>"
                             ],
                             datasets: [{
                                 label: esecialesText,
@@ -389,10 +389,10 @@ if (count($rows) > 0) {
                         type: 'bar',
                         data: {
                             labels: [
-                                '<?= $i18n[$lang]['itinerarioPastoralConJovenes'] ?>',
-                                '<?= $i18n[$lang]['comunidadCristiana'] ?>',
-                                '<?= $i18n[$lang]['discernimientoVocacional'] ?>',
-                                '<?= $i18n[$lang]['vocacion'] ?>'
+                                "<?= $i18n[$lang]['itinerarioPastoralConJovenes'] ?>",
+                                "<?= $i18n[$lang]['comunidadCristiana'] ?>",
+                                "<?= $i18n[$lang]['discernimientoVocacional'] ?>",
+                                "<?= $i18n[$lang]['vocacion'] ?>"
                             ],
                             datasets: [{
                                 label: esecialesText,
@@ -443,12 +443,12 @@ if (count($rows) > 0) {
                         type: 'bar',
                         data: {
                             labels: [
-                                '<?= $i18n[$lang]['ofertaGruposDeFe'] ?>',
-                                '<?= $i18n[$lang]['formacionLideres'] ?>',
-                                '<?= $i18n[$lang]['voluntarioServicio'] ?>',
-                                '<?= $i18n[$lang]['tiempoLibre'] ?>',
-                                '<?= $i18n[$lang]['celebracionesLiturgicas'] ?>',
-                                '<?= $i18n[$lang]['oracion'] ?>'
+                                "<?= $i18n[$lang]['ofertaGruposDeFe'] ?>",
+                                "<?= $i18n[$lang]['formacionLideres'] ?>",
+                                "<?= $i18n[$lang]['voluntarioServicio'] ?>",
+                                "<?= $i18n[$lang]['tiempoLibre'] ?>",
+                                "<?= $i18n[$lang]['celebracionesLiturgicas'] ?>",
+                                "<?= $i18n[$lang]['oracion'] ?>"
                             ],
                             datasets: [{
                                 label: esecialesText,
@@ -503,10 +503,10 @@ if (count($rows) > 0) {
                         type: 'bar',
                         data: {
                             labels: [
-                                '<?= $i18n[$lang]['acompanamientoPersonal'] ?>',
-                                '<?= $i18n[$lang]['encuentrosConComunidadesCristianas'] ?>',
-                                '<?= $i18n[$lang]['procesoPastoralCoherente'] ?>',
-                                '<?= $i18n[$lang]['formacionEnAcompanamiento'] ?>'
+                                "<?= $i18n[$lang]['acompanamientoPersonal'] ?>",
+                                "<?= $i18n[$lang]['encuentrosConComunidadesCristianas'] ?>",
+                                "<?= $i18n[$lang]['procesoPastoralCoherente'] ?>",
+                                "<?= $i18n[$lang]['formacionEnAcompanamiento'] ?>"
                             ],
                             datasets: [{
                                 label: esecialesText,
@@ -557,10 +557,10 @@ if (count($rows) > 0) {
                         type: 'bar',
                         data: {
                             labels: [
-                                '<?= $i18n[$lang]['pedagogiaExperiencial'] ?>',
-                                '<?= $i18n[$lang]['experienciasFuertes'] ?>',
-                                '<?= $i18n[$lang]['momentosDeDiscernimiento'] ?>',
-                                '<?= $i18n[$lang]['jovenesLideres'] ?>'
+                                "<?= $i18n[$lang]['pedagogiaExperiencial'] ?>",
+                                "<?= $i18n[$lang]['experienciasFuertes'] ?>",
+                                "<?= $i18n[$lang]['momentosDeDiscernimiento'] ?>",
+                                "<?= $i18n[$lang]['jovenesLideres'] ?>"
                             ],
                             datasets: [{
                                 label: esecialesText,
@@ -611,12 +611,12 @@ if (count($rows) > 0) {
                         type: 'bar',
                         data: {
                             labels: [
-                                '<?= $i18n[$lang]['estrategiasDeComunicacion'] ?>',
-                                '<?= $i18n[$lang]['encuentrosInterinstitucionales'] ?>',
-                                '<?= $i18n[$lang]['redesSociales'] ?>',
-                                '<?= $i18n[$lang]['trabajoEnRedEclesial'] ?>',
-                                '<?= $i18n[$lang]['integracionALasFamilias'] ?>',
-                                '<?= $i18n[$lang]['analisisDeLaRealidadLocal'] ?>'
+                                "<?= $i18n[$lang]['estrategiasDeComunicacion'] ?>",
+                                "<?= $i18n[$lang]['encuentrosInterinstitucionales'] ?>",
+                                "<?= $i18n[$lang]['redesSociales'] ?>",
+                                "<?= $i18n[$lang]['trabajoEnRedEclesial'] ?>",
+                                "<?= $i18n[$lang]['integracionALasFamilias'] ?>",
+                                "<?= $i18n[$lang]['analisisDeLaRealidadLocal'] ?>"
                             ],
                             datasets: [{
                                 label: esecialesText,

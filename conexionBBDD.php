@@ -3,10 +3,10 @@
 
 function parametrosConexion(){
     return [
-        "host" => "192.168.64.2:3306",
+        "host" => "mysql:3306",
         "database" => "diagnosticopastoral",
-        "username" => "username",
-        "password" => "password"
+        "username" => "root",
+        "password" => "example"
     ];
 }
 
@@ -15,6 +15,8 @@ function conectarBD(){
         $conexion = new PDO("mysql:host=".parametrosConexion()["host"].";dbname=".parametrosConexion()["database"], parametrosConexion()["username"], parametrosConexion()["password"]);
         return $conexion;
     }catch(PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }catch (Exception $e){
         echo "Error: " . $e->getMessage();
     }
     return null;

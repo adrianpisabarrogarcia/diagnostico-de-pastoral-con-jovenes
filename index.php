@@ -23,7 +23,7 @@ if (isset($_POST["submit"])) {
     comprobarTokenUnico($_SESSION["token"]);
 
     //Insert
-    insertDatosUusarioNoNull($nombre, $email, $movimiento);
+    insertDatosUsuarioNoNull($nombre, $email, $movimiento);
 
     //Redireccion
     echo "<script> location.replace('" . BASEURL . "/form/one'); </script>";
@@ -31,7 +31,7 @@ if (isset($_POST["submit"])) {
 }
 
 
-function insertDatosUusarioNoNull($nombre = "", $email = "", $movimiento = "")
+function insertDatosUsuarioNoNull($nombre = "", $email = "", $movimiento = "")
 {
     try {
         $conn = conectarBD();
@@ -81,7 +81,7 @@ function comprobarTokenUnico($token)
             <div class="text-center">
 
             </div>
-            <form action="index" method="post" name="form-comienzo">
+            <form action="" method="post" name="form-comienzo">
                 <div class="form-group mb-3 text-center">
                     <label for="nombre" class="mb-2"><?= $i18n[$lang]['tuNombre'] ?></label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Pepe" required>

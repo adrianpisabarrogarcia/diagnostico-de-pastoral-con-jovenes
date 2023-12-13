@@ -66,19 +66,24 @@ require_once BASEDIR . "/i18n.php";
 </head>
 
     <div id="languages" class="p-2 m-3 rounded float-start">
+        <?php
+        $urlEs = '?lang=es';
+        $urlEn = '?lang=en';
+        $urlFr = '?lang=fr';
+        if (isset($_GET['id'])) {
+            $urlEs .= '&id=' . $_GET['id'];
+            $urlEn .= '&id=' . $_GET['id'];
+            $urlFr .= '&id=' . $_GET['id'];
+        }
+        ?>
         <div>
-            <?php
-            $urlEs = '?lang=es';
-            $urlEn = '?lang=en';
-            if (isset($_GET['id'])) {
-                $urlEs .= '&id=' . $_GET['id'];
-                $urlEn .= '&id=' . $_GET['id'];
-            }
-            ?>
             <span class="d-flex align-items-center"><img src="<?= BASEURL ?>/assets/img/es.png" width="17">&nbsp;<a class="enlaces" href="<?= $urlEs ?>"><?= $i18n[$lang]['castellano'] ?></a></span>
         </div>
         <div>
             <span class="d-flex align-items-center"><img src="<?= BASEURL ?>/assets/img/en.png" width="17">&nbsp;<a class="enlaces" href="<?= $urlEn ?>"><?= $i18n[$lang]['ingles'] ?></a></span>
+        </div>
+        <div>
+            <span class="d-flex align-items-center"><img src="<?= BASEURL ?>/assets/img/fr.png" width="17">&nbsp;<a class="enlaces" href="<?= $urlFr ?>"><?= $i18n[$lang]['frances'] ?></a></span>
         </div>
     </div>
 <body>
