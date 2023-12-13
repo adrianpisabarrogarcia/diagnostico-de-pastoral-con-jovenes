@@ -1,3 +1,15 @@
+# Habilitar la reescritura de URL
 RewriteEngine On
+
+# Reescribir solo si la solicitud no es para un archivo existente
 RewriteCond %{REQUEST_FILENAME} !-f
+
+# Reescribir solo si la solicitud no es para un directorio existente
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Omitir la extensión .php en la URL
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Redirigir a index.php si no se especifica ningún archivo (para la raíz del sitio)
+RewriteCond %{REQUEST_URI} !\.
+RewriteRule ^$ index.php [L]
