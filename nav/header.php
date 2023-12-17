@@ -65,7 +65,7 @@ require_once BASEDIR . "/i18n.php";
     <title><?= $i18n[$lang]['titulo'] ?></title>
 </head>
 
-    <div id="languages" class="p-2 m-3 rounded float-start">
+    <div id="languages" class="p-2 m-3 rounded float-start d-flex flex-column justify-content-center align-items-center">
         <?php
         $urlEs = '?lang=es';
         $urlEn = '?lang=en';
@@ -77,13 +77,13 @@ require_once BASEDIR . "/i18n.php";
         }
         ?>
         <div>
-            <span class="d-flex align-items-center"><img src="<?= BASEURL ?>/assets/img/es.png" width="17">&nbsp;<a class="enlaces" href="<?= $urlEs ?>"><?= $i18n[$lang]['castellano'] ?></a></span>
+            <a class="enlaces" href="<?= $urlEs ?>"><?= $i18n[$lang]['castellano'] ?></a>
         </div>
         <div>
-            <span class="d-flex align-items-center"><img src="<?= BASEURL ?>/assets/img/en.png" width="17">&nbsp;<a class="enlaces" href="<?= $urlEn ?>"><?= $i18n[$lang]['ingles'] ?></a></span>
+            <a class="enlaces" href="<?= $urlEn ?>"><?= $i18n[$lang]['ingles'] ?></a>
         </div>
         <div>
-            <span class="d-flex align-items-center"><img src="<?= BASEURL ?>/assets/img/fr.png" width="17">&nbsp;<a class="enlaces" href="<?= $urlFr ?>"><?= $i18n[$lang]['frances'] ?></a></span>
+            <a class="enlaces" href="<?= $urlFr ?>"><?= $i18n[$lang]['frances'] ?></a>
         </div>
     </div>
 <body>
