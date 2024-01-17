@@ -26,6 +26,7 @@ if (isset($_GET['lang'])) {
 $i18n = [
     'es' => [
         'titulo' => '🛠 Herramienta de diagnóstico pastoral con jóvenes',
+        'descripcion' => "¿Tienes curiosidad por ver que fortalezas y debilidades tiene tu pastoral? Esta es la mejor evaluación, que te mostrará en que áreas y competencias debes mejorar o de lo contrario celebrar.",
         'castellano' => 'Castellano',
         'ingles' => 'Inglés',
         'frances' => 'Francés',
@@ -124,6 +125,7 @@ $i18n = [
     ],
     'en' => [
         'titulo' => '🛠 Pastoral Diagnostic Tool for Youth',
+        'descripcion' => "Are you curious to see what are the strengths and weaknesses of your pastoral work? This is the best assessment, which will show you in which areas and skills you need to improve or otherwise celebrate.",
         'castellano' => 'Spanish',
         'ingles' => 'English',
         'frances' => 'French',
@@ -222,6 +224,7 @@ $i18n = [
     ],
     'fr' => [
         'titulo' => '🛠 Outil de diagnostic pastoral avec les jeunes',
+        'descripcion' => "Êtes-vous curieux de voir quelles sont les forces et les faiblesses de votre pastorale ? C'est la meilleure évaluation, qui vous montrera dans quels domaines et compétences vous devez vous améliorer ou au contraire célébrer.",
         'castellano' => 'Espagnol',
         'ingles' => 'Anglais',
         'frances' => 'Français',
@@ -320,6 +323,7 @@ $i18n = [
     ],
     'pl' => [
         'titulo' => '🛠 Narzędzie diagnozujące duszpasterstwo młodzieży',
+        'descripcion' => "Czy jesteś ciekawy, jakie są mocne i słabe strony twojej pracy duszpasterskiej? To najlepsza ocena, która pokaże ci, w jakich obszarach i kompetencjach powinieneś się poprawić, a które z kolei należy świętować.",
         'castellano' => 'Hiszpański',
         'ingles' => 'Angielski',
         'frances' => 'Francuski',

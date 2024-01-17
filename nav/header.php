@@ -15,8 +15,8 @@ $basedirAux = str_replace('/nav', '', __DIR__);
 $basedirAux = str_replace('\nav', '', $basedirAux);
 
 define("BASEDIR", $basedirAux);
-//define("BASEURL", "http://localhost:8080/");
-define("BASEURL", "/DiagnosticoPastoralConJovenesForm");
+define("BASEURL", "http://localhost:8080/");
+//define("BASEURL", "/DiagnosticoPastoralConJovenesForm");
 
 
 // Includes
@@ -34,9 +34,7 @@ require_once BASEDIR . "/i18n.php";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- meta description -->
-    <meta name="description"
-          content="¿Tienes curiosidad por ver que fortalezas y debilidades tiene tu pastoral? Esta es la mejor evaluación,
-          que te mostrará en que áreas y competencias debes mejorar o de lo contrario celebrar.">
+    <meta name="description" content="<?= $i18n[$lang]['descripcion'] ?>">
     <meta name=”keywords” content=“Diagnostico”>
     <meta name=”keywords” content=“Pastoral”>
     <meta name=”keywords” content=“Jóvenes”>
