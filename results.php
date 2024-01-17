@@ -77,8 +77,8 @@ if (count($rows) > 0) {
         ];
     }
 } else {
-    //echo "<script> location.replace('" . BASEURL . "/'); </script>";
-    //exit();
+    echo "<script> location.replace('" . BASEURL . "/'); </script>";
+    exit();
 }
 
 ?>

@@ -15,7 +15,9 @@ $basedirAux = str_replace('/nav', '', __DIR__);
 $basedirAux = str_replace('\nav', '', $basedirAux);
 
 define("BASEDIR", $basedirAux);
+//define("BASEURL", "http://localhost:8080/");
 define("BASEURL", "/DiagnosticoPastoralConJovenesForm");
+
 
 // Includes
 require_once BASEDIR . "/conexionBBDD.php";
@@ -70,10 +72,12 @@ require_once BASEDIR . "/i18n.php";
         $urlEs = '?lang=es';
         $urlEn = '?lang=en';
         $urlFr = '?lang=fr';
+        $urlPl = '?lang=pl';
         if (isset($_GET['id'])) {
             $urlEs .= '&id=' . $_GET['id'];
             $urlEn .= '&id=' . $_GET['id'];
             $urlFr .= '&id=' . $_GET['id'];
+            $urlPl .= '&id=' . $_GET['id'];
         }
         ?>
         <div>
@@ -84,6 +88,9 @@ require_once BASEDIR . "/i18n.php";
         </div>
         <div>
             <a class="enlaces" href="<?= $urlFr ?>"><?= $i18n[$lang]['frances'] ?></a>
+        </div>
+        <div>
+            <a class="enlaces" href="<?= $urlPl ?>"><?= $i18n[$lang]['polaco'] ?></a>
         </div>
     </div>
 <body>
