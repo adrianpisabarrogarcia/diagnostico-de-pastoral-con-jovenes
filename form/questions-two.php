@@ -103,7 +103,8 @@ $questions2 = [
         'question' => [
             'es' => 'Hay definida una <u>estructura pastoral</u> (provincial, diocesana, local...) (Equipos provinciales de pastoral, Equipos locales, coordinaciones, órganos representativos…).',
             'en' => 'There is a defined <u>pastoral structure</u> (provincial, diocesan, local...) (Provincial pastoral teams, local teams, coordinations, representative bodies...).',
-            'fr' => "Określono <u>strukturę duszpasterstwa</u> (na poziomie prowincji, diecezji lub lokalnie): prowincjalne zespoły duszpasterskie, zespoły lokalne, koordynatorzy, przedstawiciele…"
+            'fr' => "Existe-t'il une <u>structure pastorale</u> (provinciale, diocésaine, locale...), (équipes pastorales provinciales, locales, coordinations, organes représentatifs...)?",
+            'pl' => "Określono <u>strukturę duszpasterstwa</u> (na poziomie prowincji, diecezji lub lokalnie): prowincjalne zespoły duszpasterskie, zespoły lokalne, koordynatorzy, przedstawiciele…"
         ],
         'answers' => [
             "si" => "1",
